@@ -1,25 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   errors.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/10 12:28:20 by fluchten          #+#    #+#             */
-/*   Updated: 2023/03/19 15:34:37 by fluchten         ###   ########.fr       */
+/*   Created: 2023/03/19 15:34:13 by fluchten          #+#    #+#             */
+/*   Updated: 2023/03/19 15:34:33 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-int	main(int ac, char **av)
+int	print_error(char *str)
 {
-	t_game	game;
-
-	if (!check_args(ac, av))
-		return (1);
-	game.mlx = mlx_init();
-	game.win = mlx_new_window(game.mlx, 500, 500, "cub3d");
-	mlx_loop(game.mlx);
+	ft_putendl_fd(MSG_ERROR, STDERR_FILENO);
+	ft_putendl_fd(str, STDERR_FILENO);
 	return (0);
 }

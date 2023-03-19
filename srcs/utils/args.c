@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   args.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/10 12:28:20 by fluchten          #+#    #+#             */
-/*   Updated: 2023/03/19 15:34:37 by fluchten         ###   ########.fr       */
+/*   Created: 2023/03/19 15:34:54 by fluchten          #+#    #+#             */
+/*   Updated: 2023/03/19 15:45:12 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-int	main(int ac, char **av)
+int	check_args(int ac, char **av)
 {
-	t_game	game;
+	char	*map;
+	int		len;
 
-	if (!check_args(ac, av))
-		return (1);
-	game.mlx = mlx_init();
-	game.win = mlx_new_window(game.mlx, 500, 500, "cub3d");
-	mlx_loop(game.mlx);
-	return (0);
+	if (ac != 2)
+		return (print_error(MSG_WRONG_NB_ARGS));
+	map = av[1];
+	len = ft_strlen(map);
+	if (len < 5 || ft_strncmp(map + (len - 4), ".cub", 4))
+		return (print_error(MSG_INVALID_MAP));
+	return (1);
 }

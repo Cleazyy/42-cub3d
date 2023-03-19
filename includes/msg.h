@@ -1,25 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   msg.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/10 12:28:20 by fluchten          #+#    #+#             */
-/*   Updated: 2023/03/19 15:34:37 by fluchten         ###   ########.fr       */
+/*   Created: 2023/03/10 12:30:04 by fluchten          #+#    #+#             */
+/*   Updated: 2023/03/19 15:36:53 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#ifndef MSG_H
+# define MSG_H
 
-int	main(int ac, char **av)
-{
-	t_game	game;
+# define MSG_ERROR "\033[1;31mError\033[0m"
+# define MSG_WRONG_NB_ARGS "Wrong number of arguments!"
+# define MSG_INVALID_MAP "Invalid map format!"
 
-	if (!check_args(ac, av))
-		return (1);
-	game.mlx = mlx_init();
-	game.win = mlx_new_window(game.mlx, 500, 500, "cub3d");
-	mlx_loop(game.mlx);
-	return (0);
-}
+#endif
