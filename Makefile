@@ -6,7 +6,7 @@
 #    By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/10 12:24:21 by fluchten          #+#    #+#              #
-#    Updated: 2023/03/19 15:41:59 by fluchten         ###   ########.fr        #
+#    Updated: 2023/03/19 16:12:29 by fluchten         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,8 @@ INC_DIR = includes
 SRCS_DIR = srcs
 OBJS_DIR = objs
 
-SRCS =	utils/args.c \
+SRCS =	game/hooks.c \
+		utils/args.c \
 		utils/errors.c \
 		main.c
 

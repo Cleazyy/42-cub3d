@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   hooks.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/10 12:28:20 by fluchten          #+#    #+#             */
-/*   Updated: 2023/03/19 16:15:03 by fluchten         ###   ########.fr       */
+/*   Created: 2023/03/19 16:11:19 by fluchten          #+#    #+#             */
+/*   Updated: 2023/03/19 16:14:22 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-int	main(int ac, char **av)
+int	close_window(t_game *game)
 {
-	t_game	game;
+	mlx_destroy_window(game->mlx, game->win);
+	ft_putendl_fd("Game closed.", STDOUT_FILENO);
+	exit(EXIT_SUCCESS);
+}
 
-	if (!check_args(ac, av))
-		return (1);
-	game.mlx = mlx_init();
-	game.win = mlx_new_window(game.mlx, 500, 500, "cub3d");
-	mlx_key_hook(game.win, key_pressed, &game);
-	mlx_hook(game.win, 17, 0, close_window, &game);
-	mlx_loop(game.mlx);
+int	key_pressed(int key, t_game *game)
+{
+	if (key == 53)
+		close_window(game);
 	return (0);
 }

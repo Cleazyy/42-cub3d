@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 12:30:04 by fluchten          #+#    #+#             */
-/*   Updated: 2023/03/19 15:42:05 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/03/19 16:13:22 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,9 @@ typedef struct s_game {
 	void	*win;
 }	t_game;
 
+/* game */
+int		close_window(t_game *game);
+int		key_pressed(int key, t_game *game);
 /* utils args */
 int		check_args(int ac, char **av);
 /* utils errors */
