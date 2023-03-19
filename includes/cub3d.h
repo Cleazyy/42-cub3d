@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 12:30:04 by fluchten          #+#    #+#             */
-/*   Updated: 2023/03/19 16:13:22 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/03/19 16:21:25 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,9 @@
 # include <mlx.h>
 # include "libft.h"
 # include "msg.h"
+
+# define WIN_W 1280
+# define WIN_H 720
 
 typedef struct s_game {
 	void	*mlx;
