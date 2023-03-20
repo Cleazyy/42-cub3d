@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 12:28:20 by fluchten          #+#    #+#             */
-/*   Updated: 2023/03/19 16:21:09 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/03/20 15:08:22 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,17 @@
 
 int	main(int ac, char **av)
 {
-	t_game	game;
+	t_data	data;
 
 	if (!check_args(ac, av))
 		return (1);
-	game.mlx = mlx_init();
-	if (!game.mlx)
+	parse_map(&data, av[1]);
+	data.mlx = mlx_init();
+	if (!data.mlx)
 		return (1);
-	game.win = mlx_new_window(game.mlx, WIN_W, WIN_H, "cub3d");
-	mlx_key_hook(game.win, key_pressed, &game);
-	mlx_hook(game.win, 17, 0, close_window, &game);
-	mlx_loop(game.mlx);
+	data.win = mlx_new_window(data.mlx, WIN_W, WIN_H, "cub3d");
+	mlx_key_hook(data.win, key_pressed, &data);
+	mlx_hook(data.win, 17, 0, close_window, &data);
+	mlx_loop(data.mlx);
 	return (0);
 }

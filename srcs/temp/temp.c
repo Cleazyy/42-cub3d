@@ -1,28 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   hooks.c                                            :+:      :+:    :+:   */
+/*   temp.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/19 16:11:19 by fluchten          #+#    #+#             */
-/*   Updated: 2023/03/20 16:05:54 by fluchten         ###   ########.fr       */
+/*   Created: 2023/03/20 15:41:50 by fluchten          #+#    #+#             */
+/*   Updated: 2023/03/20 15:57:51 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-int	close_window(t_data *data)
+void	print_map_infos(t_data *data)
 {
-	ft_putendl_fd("Game closed.", STDOUT_FILENO);
-	mlx_destroy_window(data->mlx, data->win);
-	free_everythings(data);
-	exit(EXIT_SUCCESS);
-}
-
-int	key_pressed(int key, t_data *data)
-{
-	if (key == 53)
-		close_window(data);
-	return (0);
+	printf("no_path = %s\n", data->map.sprite.no_path);
+	printf("so_path = %s\n", data->map.sprite.so_path);
+	printf("we_path = %s\n", data->map.sprite.we_path);
+	printf("ea_path = %s\n", data->map.sprite.ea_path);
+	printf("floor_color = %s\n", data->map.floor_color);
+	printf("ceiling_color = %s\n", data->map.ceiling_color);
 }

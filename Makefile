@@ -6,7 +6,7 @@
 #    By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/10 12:24:21 by fluchten          #+#    #+#              #
-#    Updated: 2023/03/19 16:12:29 by fluchten         ###   ########.fr        #
+#    Updated: 2023/03/20 16:01:01 by fluchten         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,8 +22,11 @@ SRCS_DIR = srcs
 OBJS_DIR = objs
 
 SRCS =	game/hooks.c \
+		map/parsing.c \
+		temp/temp.c \
 		utils/args.c \
 		utils/errors.c \
+		utils/free.c \
 		main.c
 
 OBJS = $(addprefix ${OBJS_DIR}/, ${SRCS:%.c=%.o})
