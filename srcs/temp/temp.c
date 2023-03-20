@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 15:41:50 by fluchten          #+#    #+#             */
-/*   Updated: 2023/03/20 15:57:51 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/03/20 18:54:56 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,4 +20,6 @@ void	print_map_infos(t_data *data)
 	printf("ea_path = %s\n", data->map.sprite.ea_path);
 	printf("floor_color = %s\n", data->map.floor_color);
 	printf("ceiling_color = %s\n", data->map.ceiling_color);
+	for (int i = 0; data->map.array[i]; i++)
+		printf("map.array[%d] = [%s]\n", i, data->map.array[i]);
 }
