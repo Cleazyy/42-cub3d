@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 14:49:12 by fluchten          #+#    #+#             */
-/*   Updated: 2023/03/20 18:54:51 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/03/20 19:00:52 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void	parse_map(t_data *data, char *file)
 
 	fd = open(file, O_RDONLY);
 	if (fd == -1)
-		return ;
+		exit_error(MSG_OPEN_FAILED);
 	while (1)
 	{
 		line = get_next_line(fd);

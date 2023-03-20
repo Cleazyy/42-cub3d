@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 12:30:04 by fluchten          #+#    #+#             */
-/*   Updated: 2023/03/20 18:54:48 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/03/20 18:58:45 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void	parse_map(t_data *data, char *file);
 int		check_args(int ac, char **av);
 /* utils errors */
 int		print_error(char *str);
-int		exit_error(t_data *data, char *str);
+int		exit_error(char *str);
 /* utils free */
 void	free_array(char **array);
 void	free_everythings(t_data *data);
