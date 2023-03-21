@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 14:49:12 by fluchten          #+#    #+#             */
-/*   Updated: 2023/03/21 08:57:09 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/03/21 19:05:59 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,8 @@ static void	retrieve_map_infos(t_data *data, char *line)
 		data->map.str = ft_strjoin(temp, line);
 		free(temp);
 	}
+	else if (line[0] != '\n')
+		exit_free_error(data, "Map syntax error!");
 }
 
 void	parse_map(t_data *data, char *file)
