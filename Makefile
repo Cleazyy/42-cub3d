@@ -6,7 +6,7 @@
 #    By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/10 12:24:21 by fluchten          #+#    #+#              #
-#    Updated: 2023/03/20 16:01:01 by fluchten         ###   ########.fr        #
+#    Updated: 2023/03/21 08:24:47 by fluchten         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,12 +21,12 @@ INC_DIR = includes
 SRCS_DIR = srcs
 OBJS_DIR = objs
 
-SRCS =	game/hooks.c \
-		map/parsing.c \
+SRCS =	map/map_parsing.c \
 		temp/temp.c \
 		utils/args.c \
 		utils/errors.c \
 		utils/free.c \
+		utils/hooks.c \
 		main.c
 
 OBJS = $(addprefix ${OBJS_DIR}/, ${SRCS:%.c=%.o})
