@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 14:49:12 by fluchten          #+#    #+#             */
-/*   Updated: 2023/03/21 08:41:45 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/03/21 08:57:09 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,5 +81,6 @@ void	parse_map(t_data *data, char *file)
 		free(line);
 	}
 	data->map.array = ft_split(data->map.str, '\n');
+	check_is_valid_map(data, data->map.array);
 	print_map_infos(data);
 }

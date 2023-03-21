@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 15:41:50 by fluchten          #+#    #+#             */
-/*   Updated: 2023/03/21 07:58:19 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/03/21 09:23:42 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,15 @@
 
 void	print_map_infos(t_data *data)
 {
+	int	i;
+
 	printf("no_path = %s\n", data->map.sprite.no_path);
 	printf("so_path = %s\n", data->map.sprite.so_path);
 	printf("we_path = %s\n", data->map.sprite.we_path);
 	printf("ea_path = %s\n", data->map.sprite.ea_path);
 	printf("floor_color = %s\n", data->map.floor_color);
 	printf("ceiling_color = %s\n", data->map.ceiling_color);
-	for (int i = 0; data->map.array[i]; i++)
+	i = -1;
+	while (data->map.array[++i])
 		printf("map.array[%d] = [%s]\n", i, data->map.array[i]);
 }

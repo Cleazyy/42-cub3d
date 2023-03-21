@@ -6,7 +6,7 @@
 #    By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/10 12:24:21 by fluchten          #+#    #+#              #
-#    Updated: 2023/03/21 08:24:47 by fluchten         ###   ########.fr        #
+#    Updated: 2023/03/21 09:00:04 by fluchten         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,12 +21,14 @@ INC_DIR = includes
 SRCS_DIR = srcs
 OBJS_DIR = objs
 
-SRCS =	map/map_parsing.c \
+SRCS =	map/map_check.c \
+		map/map_parsing.c \
 		temp/temp.c \
 		utils/args.c \
 		utils/errors.c \
 		utils/free.c \
 		utils/hooks.c \
+		utils/utils.c \
 		main.c
 
 OBJS = $(addprefix ${OBJS_DIR}/, ${SRCS:%.c=%.o})
@@ -57,14 +59,14 @@ ${OBJS_DIR}/%.o: ${SRCS_DIR}/%.c | ${OBJS_DIR}
 
 ${NAME}: ${OBJS}
 	@make -C ${LIBFT_PATH}
-	@make -C ${MLX_PATH}
+	@make -sC ${MLX_PATH}
 	@${CC} ${CFLAGS} ${OBJS} ${LIBFT_LIB} ${MLX_LIB} -o ${NAME}
 	@echo "${COLOR_CYAN}${NAME} ${COLOR_GREEN}${OBJS_DIR} were created${COLOR_RESET}"
 	@echo "${COLOR_CYAN}${NAME} ${COLOR_GREEN}${NAME} was created${COLOR_RESET}"
 
 clean:
 	@make clean -C ${LIBFT_PATH}
-	@make clean -C ${MLX_PATH}
+	@make clean -sC ${MLX_PATH}
 	@${RM} ${OBJS_DIR}
 	@echo "${COLOR_CYAN}${NAME} ${COLOR_RED}${OBJS_DIR} were deleted${COLOR_RESET}"
 
