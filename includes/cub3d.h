@@ -40,6 +40,8 @@ typedef struct s_map
 	t_sprite	sprite;
 	char		*floor_color;
 	char		*ceiling_color;
+	int			start_player_x;
+	int			start_player_y;
 }	t_map;
 
 typedef struct s_data
