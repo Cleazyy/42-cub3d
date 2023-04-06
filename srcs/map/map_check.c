@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 08:26:30 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/06 08:31:56 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/06 12:30:51 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ static int	only_valid_items(char **map)
 		j = 0;
 		while (map[i][j])
 		{
-			if (!is_character(map[i][j]) && map[i][j] != '0' && map[i][j] != '1'
-				&& map[i][j] != ' ')
+			if (map[i][j] != '0' && map[i][j] != '1' && map[i][j] != ' '
+				&& !is_character(map[i][j]))
 				return (1);
 			j++;
 		}

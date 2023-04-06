@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 16:00:45 by fluchten          #+#    #+#             */
-/*   Updated: 2023/03/21 18:08:46 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/06 10:18:35 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,20 @@ void	free_array(char **array)
 
 void	free_everythings(t_data *data)
 {
-	free(data->map.sprite.no_path);
-	free(data->map.sprite.so_path);
-	free(data->map.sprite.we_path);
-	free(data->map.sprite.ea_path);
-	free(data->map.floor_color);
-	free(data->map.ceiling_color);
-	free(data->map.str);
-	free_array(data->map.array);
+	if (data->map.sprite.no_path)
+		free(data->map.sprite.no_path);
+	if (data->map.sprite.so_path)
+		free(data->map.sprite.so_path);
+	if (data->map.sprite.we_path)
+		free(data->map.sprite.we_path);
+	if (data->map.sprite.ea_path)
+		free(data->map.sprite.ea_path);
+	if (data->map.floor_color)
+		free(data->map.floor_color);
+	if (data->map.ceiling_color)
+		free(data->map.ceiling_color);
+	if (data->map.str)
+		free(data->map.str);
+	if (data->map.array)
+		free_array(data->map.array);
 }

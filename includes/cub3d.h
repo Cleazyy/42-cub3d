@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 12:30:04 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/06 08:45:21 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/06 13:25:29 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,8 @@ typedef struct s_data
 /* map */
 void	check_is_valid_map(t_data *data);
 void	parse_map(t_data *data, char *file);
+void	initialize_map_table(t_data *data);
+int		map_contains_all_infos(t_data *data);
 void	print_map_infos(t_data *data);
 /* utils */
 int		is_character(char c);
