@@ -1,24 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   msg.h                                              :+:      :+:    :+:   */
+/*   player_utils.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/10 12:30:04 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/06 08:17:17 by fluchten         ###   ########.fr       */
+/*   Created: 2023/03/21 08:58:08 by fluchten          #+#    #+#             */
+/*   Updated: 2023/04/06 08:05:14 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MSG_H
-# define MSG_H
+#include "cub3d.h"
 
-# define MSG_ERROR "\033[1;31mError\033[0m"
-# define MSG_WRONG_NB_ARGS "Wrong number of arguments!"
-# define MSG_OPEN_FAILED "Map file opening failed!"
-# define MSG_INVALID_MAP "Invalid map format!"
-# define MSG_INVALID_ITEMS "Map contains invalid items!"
-# define MSG_NB_SPAWN "Map does not exactly have a spawn!"
-# define MSG_MAP_NOT_CLOSED "Map is not closed!"
-
-#endif
+int	is_character(char c)
+{
+	return (c == 'N' || c == 'S' || c == 'E' || c == 'W');
+}

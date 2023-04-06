@@ -6,7 +6,7 @@
 #    By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/10 12:24:21 by fluchten          #+#    #+#              #
-#    Updated: 2023/03/21 09:00:04 by fluchten         ###   ########.fr        #
+#    Updated: 2023/04/06 08:46:02 by fluchten         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,8 @@ OBJS_DIR = objs
 
 SRCS =	map/map_check.c \
 		map/map_parsing.c \
-		temp/temp.c \
+		map/map_utils.c \
+		player/player_utils.c \
 		utils/args.c \
 		utils/errors.c \
 		utils/free.c \

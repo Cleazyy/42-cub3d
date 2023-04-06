@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 12:30:04 by fluchten          #+#    #+#             */
-/*   Updated: 2023/03/21 08:59:56 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/06 08:45:21 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,12 @@ typedef struct s_sprite
 	char	*ea_path;
 }	t_sprite;
 
+typedef struct s_ply
+{
+	int	s_posx;
+	int	s_posy;
+}	t_ply;
+
 typedef struct s_map
 {
 	char		*str;
@@ -40,8 +46,6 @@ typedef struct s_map
 	t_sprite	sprite;
 	char		*floor_color;
 	char		*ceiling_color;
-	int			start_player_x;
-	int			start_player_y;
 }	t_map;
 
 typedef struct s_data
@@ -49,11 +53,15 @@ typedef struct s_data
 	void		*mlx;
 	void		*win;
 	t_map		map;
+	t_ply		ply;
 }	t_data;
 
 /* map */
-void	check_is_valid_map(t_data *data, char **map);
+void	check_is_valid_map(t_data *data);
 void	parse_map(t_data *data, char *file);
+void	print_map_infos(t_data *data);
+/* utils */
+int		is_character(char c);
 /* utils args */
 int		check_args(int ac, char **av);
 /* utils errors */
@@ -66,9 +74,5 @@ void	free_everythings(t_data *data);
 /* utils hooks */
 int		close_window(t_data *data);
 int		key_pressed(int key, t_data *data);
-/* utils */
-int		is_character(char c);
-/* temp */
-void	print_map_infos(t_data *data);
 
 #endif

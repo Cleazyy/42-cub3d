@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 14:49:12 by fluchten          #+#    #+#             */
-/*   Updated: 2023/03/21 19:05:59 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/06 09:15:13 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ static void	initialize_map_table(t_data *data)
 static char	*allocate_map_infos(char *line, int start)
 {
 	char	*final;
+	char	*temp;
 	int		new_line;
 	int		len;
 
@@ -34,7 +35,9 @@ static char	*allocate_map_infos(char *line, int start)
 	len = ft_strlen(line);
 	if (line[len - 1] == '\n')
 		new_line = 1;
-	final = ft_substr(line, start, (len - start) - new_line);
+	temp = ft_substr(line, start, (len - start) - new_line);
+	final = ft_strtrim(temp, " ");
+	free(temp);
 	return (final);
 }
 
@@ -79,10 +82,13 @@ void	parse_map(t_data *data, char *file)
 		line = get_next_line(fd);
 		if (!line)
 			break ;
+		// char *temp = ft_strtrim(line, " ");
+		// free(line);
+		// line = temp;
 		retrieve_map_infos(data, line);
 		free(line);
 	}
 	data->map.array = ft_split(data->map.str, '\n');
-	check_is_valid_map(data, data->map.array);
 	print_map_infos(data);
+	check_is_valid_map(data);
 }

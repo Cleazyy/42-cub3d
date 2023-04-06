@@ -5,14 +5,9 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/21 08:58:08 by fluchten          #+#    #+#             */
-/*   Updated: 2023/03/21 08:58:58 by fluchten         ###   ########.fr       */
+/*   Created: 2023/04/06 08:06:08 by fluchten          #+#    #+#             */
+/*   Updated: 2023/04/06 08:20:42 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
-
-int	is_character(char c)
-{
-	return (c == 'N' || c == 'S' || c == 'E' || c == 'W');
-}
