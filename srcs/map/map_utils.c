@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 08:44:46 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/06 22:01:55 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/06 22:39:31 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ void	initialize_map_table(t_data *data)
 	data->map.sprite.ea_path = NULL;
 	data->map.floor_color = NULL;
 	data->map.ceiling_color = NULL;
+	data->map.floor_rgb = 0;
+	data->map.ceiling_rgb = 0;
 }
 
 int	map_contains_all_infos(t_data *data)
@@ -36,6 +38,26 @@ int	map_contains_all_infos(t_data *data)
 	return (0);
 }
 
+char	*remove_map_spaces_infos(char *line)
+{
+	char	*final;
+	char	*temp;
+
+	temp = ft_strtrim(line, " ");
+	if ((temp[0] == 'N' && temp[1] == 'O')
+		|| (temp[0] == 'S' && temp[1] == 'O')
+		|| (temp[0] == 'W' && temp[1] == 'E')
+		|| (temp[0] == 'E' && temp[1] == 'A')
+		|| (temp[0] == 'F')
+		|| (temp[0] == 'C'))
+		return (temp);
+	else
+	{
+		final = ft_strdup(line);
+		return (final);
+	}
+}
+
 void	print_map_infos(t_data *data)
 {
 	int	i;
@@ -46,6 +68,8 @@ void	print_map_infos(t_data *data)
 	printf("ea_path = [%s]\n", data->map.sprite.ea_path);
 	printf("floor_color = [%s]\n", data->map.floor_color);
 	printf("ceiling_color = [%s]\n", data->map.ceiling_color);
+	printf("floor_rgb = [%d]\n", data->map.floor_rgb);
+	printf("ceiling_rgb = [%d]\n", data->map.ceiling_rgb);
 	i = -1;
 	while (data->map.array[++i])
 		printf("map.array[%d] = [%s]\n", i, data->map.array[i]);
