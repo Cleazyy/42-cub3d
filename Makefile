@@ -6,14 +6,14 @@
 #    By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/10 12:24:21 by fluchten          #+#    #+#              #
-#    Updated: 2023/04/06 08:46:02 by fluchten         ###   ########.fr        #
+#    Updated: 2023/04/06 13:30:05 by fluchten         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = cub3D
 
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror #${FSANITIZE}
+CFLAGS = -Wall -Wextra -Werror ${FSANITIZE}
 FSANITIZE = -fsanitize=address -g
 RM = rm -rf
 
@@ -21,14 +21,14 @@ INC_DIR = includes
 SRCS_DIR = srcs
 OBJS_DIR = objs
 
-SRCS =	map/map_check.c \
+SRCS =	game/game_hooks.c \
+		map/map_check.c \
 		map/map_parsing.c \
 		map/map_utils.c \
 		player/player_utils.c \
 		utils/args.c \
 		utils/errors.c \
 		utils/free.c \
-		utils/hooks.c \
 		utils/utils.c \
 		main.c
 
