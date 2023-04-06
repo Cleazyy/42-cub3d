@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 08:44:46 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/06 13:25:14 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/06 22:01:55 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,17 +26,12 @@ void	initialize_map_table(t_data *data)
 
 int	map_contains_all_infos(t_data *data)
 {
-	if (!data->map.sprite.no_path)
-		return (1);
-	if (!data->map.sprite.so_path)
-		return (1);
-	if (!data->map.sprite.we_path)
-		return (1);
-	if (!data->map.sprite.ea_path)
-		return (1);
-	if (!data->map.floor_color)
-		return (1);
-	if (!data->map.ceiling_color)
+	if (!data->map.sprite.no_path
+		|| !data->map.sprite.so_path
+		|| !data->map.sprite.we_path
+		|| !data->map.sprite.ea_path
+		|| !data->map.floor_color
+		|| !data->map.ceiling_color)
 		return (1);
 	return (0);
 }
