@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 14:49:12 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/07 08:16:41 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/07 08:58:15 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,6 @@ static void	allocate_map(t_data *data, char *line)
 static void	retrieve_map_infos(t_data *data, char *line)
 {
 	static int	is_map = 0;
-	// static int 	is_end_of_file = 0;
 
 	if (line[0] == 'N' && line[1] == 'O')
 		data->map.sprite.no_path = allocate_map_infos(data, line, 3, 1);
@@ -72,8 +71,6 @@ static void	retrieve_map_infos(t_data *data, char *line)
 	}
 	else if (line[0] == '\n' && is_map == 1)
 		exit_free_error(data, MSG_MAP_NEWLINE);
-	// else if (line[0] == '\n' && is_end_of_file == 1)
-	// 	return ;
 	else if (line[0] != '\n')
 		exit_free_error(data, MSG_SYNTAX_ERROR);
 }
