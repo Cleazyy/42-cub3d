@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 12:30:04 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/06 22:39:47 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/07 07:38:05 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdlib.h>
 # include <stdio.h>
 # include <fcntl.h>
+# include <limits.h>
 # include <mlx.h>
 # include "libft.h"
 # include "get_next_line.h"
@@ -60,10 +61,10 @@ typedef struct s_data
 
 /* map */
 void	check_is_valid_map(t_data *data);
+int		parse_colors(t_data *data, char *color);
 void	parse_map(t_data *data, char *file);
 void	initialize_map_table(t_data *data);
 int		map_contains_all_infos(t_data *data);
-char	*remove_map_spaces_infos(char *line);
 void	print_map_infos(t_data *data);
 /* utils */
 int		is_character(char c);

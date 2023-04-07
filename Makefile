@@ -6,7 +6,7 @@
 #    By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/10 12:24:21 by fluchten          #+#    #+#              #
-#    Updated: 2023/04/06 13:30:05 by fluchten         ###   ########.fr        #
+#    Updated: 2023/04/07 07:32:18 by fluchten         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,7 @@ OBJS_DIR = objs
 
 SRCS =	game/game_hooks.c \
 		map/map_check.c \
+		map/map_colors.c \
 		map/map_parsing.c \
 		map/map_utils.c \
 		player/player_utils.c \

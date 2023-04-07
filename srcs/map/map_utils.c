@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 08:44:46 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/06 22:39:31 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/07 07:28:00 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,26 +36,6 @@ int	map_contains_all_infos(t_data *data)
 		|| !data->map.ceiling_color)
 		return (1);
 	return (0);
-}
-
-char	*remove_map_spaces_infos(char *line)
-{
-	char	*final;
-	char	*temp;
-
-	temp = ft_strtrim(line, " ");
-	if ((temp[0] == 'N' && temp[1] == 'O')
-		|| (temp[0] == 'S' && temp[1] == 'O')
-		|| (temp[0] == 'W' && temp[1] == 'E')
-		|| (temp[0] == 'E' && temp[1] == 'A')
-		|| (temp[0] == 'F')
-		|| (temp[0] == 'C'))
-		return (temp);
-	else
-	{
-		final = ft_strdup(line);
-		return (final);
-	}
 }
 
 void	print_map_infos(t_data *data)

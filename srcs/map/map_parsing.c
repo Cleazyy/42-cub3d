@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 14:49:12 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/06 22:39:14 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/07 07:30:09 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,27 +75,24 @@ static void	retrieve_map_infos(t_data *data, char *line)
 		exit_free_error(data, MSG_SYNTAX_ERROR);
 }
 
-static int	parse_colors(t_data *data, char *color)
+static char	*remove_map_spaces_infos(char *line)
 {
-	char	**rgb_array;
-	int		red;
-	int		green;
-	int		blue;
+	char	*final;
+	char	*temp;
 
-	rgb_array = ft_split(color, ',');
-	if (ft_array_len(rgb_array) != 3)
-		exit_free_error(data, "RGB format is not valid!");
-	red = ft_atoi(rgb_array[0]);
-	if (red < 0 || red > 255)
-		exit_free_error(data, "RGB format is not valid!");
-	green = ft_atoi(rgb_array[1]);
-	if (green < 0 || green > 255)
-		exit_free_error(data, "RGB format is not valid!");
-	blue = ft_atoi(rgb_array[2]);
-	if (blue < 0 || blue > 255)
-		exit_free_error(data, "RGB format is not valid!");
-	free_array(rgb_array);
-	return ((red << 16) + (green << 8) + blue);
+	temp = ft_strtrim(line, " ");
+	if ((temp[0] == 'N' && temp[1] == 'O')
+		|| (temp[0] == 'S' && temp[1] == 'O')
+		|| (temp[0] == 'W' && temp[1] == 'E')
+		|| (temp[0] == 'E' && temp[1] == 'A')
+		|| (temp[0] == 'F')
+		|| (temp[0] == 'C'))
+		return (temp);
+	else
+	{
+		final = ft_strdup(line);
+		return (final);
+	}
 }
 
 void	parse_map(t_data *data, char *file)
