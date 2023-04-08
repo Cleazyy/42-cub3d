@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 12:30:04 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/08 14:32:37 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/08 14:44:01 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,17 +28,14 @@
 
 # define MINI_W 175
 # define MINI_H 175
-# define MINI_SIDE 10
 
 typedef struct s_img
 {
-	void	*img;
+	void	*ptr;
 	char	*addr;
 	int		bpp;
-	int		line_length;
+	int		line_len;
 	int		endian;
-	double	height;
-	double	width;
 }	t_img;
 
 typedef struct s_sprite
