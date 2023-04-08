@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/19 15:34:54 by fluchten          #+#    #+#             */
-/*   Updated: 2023/03/19 15:45:12 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/08 12:20:58 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,5 @@ int	check_args(int ac, char **av)
 	len = ft_strlen(map);
 	if (len < 5 || ft_strncmp(map + (len - 4), ".cub", 4))
 		return (print_error(MSG_INVALID_MAP));
-	return (1);
+	return (0);
 }
