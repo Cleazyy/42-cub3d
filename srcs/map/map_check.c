@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 08:26:30 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/06 12:30:51 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/08 16:10:22 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,8 @@ static int	count_spawn_pos(t_data *data, char **map)
 		{
 			if (is_character(map[i][j]))
 			{
-				data->ply.s_posy = i;
-				data->ply.s_posx = j;
+				data->ply.y = i;
+				data->ply.x = j;
 				count++;
 			}
 			j++;

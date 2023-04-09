@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 12:30:04 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/08 14:44:01 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/09 15:28:04 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,11 @@
 # include <mlx.h>
 # include "libft.h"
 # include "get_next_line.h"
+# include "minimap.h"
 # include "msg.h"
 
 # define WIN_W 1280
 # define WIN_H 720
-
-# define MINI_W 175
-# define MINI_H 175
 
 typedef struct s_img
 {
@@ -48,8 +46,8 @@ typedef struct s_sprite
 
 typedef struct s_ply
 {
-	int	s_posx;
-	int	s_posy;
+	double	x;
+	double	y;
 }	t_ply;
 
 typedef struct s_map
@@ -83,8 +81,6 @@ void	parse_map(t_data *data, char *file);
 void	initialize_map_table(t_data *data);
 int		map_contains_all_infos(t_data *data);
 void	print_map_infos(t_data *data);
-/* minimap */
-void	init_minimap(t_data *data);
 /* player */
 int		is_character(char c);
 /* utils */
