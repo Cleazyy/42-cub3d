@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 12:28:20 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/08 14:45:17 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/09 21:56:10 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	main(int ac, char **av)
 
 	if (check_args(ac, av) != 0)
 		return (1);
-	parse_map(&data, av[1]);
+	init_parsing(&data, av[1]);
 	data.mlx = mlx_init();
 	if (!data.mlx)
 		return (print_error(MSG_MLX_FAILED));

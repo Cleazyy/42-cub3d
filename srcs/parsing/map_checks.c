@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   map_check.c                                        :+:      :+:    :+:   */
+/*   map_checks.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 08:26:30 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/08 16:10:22 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/09 22:09:25 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,35 +59,10 @@ static int	count_spawn_pos(t_data *data, char **map)
 	return (count);
 }
 
-/* static int	closed_map(char **map, int j, int i)
-{
-	int	ret;
-
-	if (map[i][j] != '0' && map[i][j] != '1' && map[i][j] != 'N')
-		return (1);
-	if (map[i][j] != '1')
-	{
-		map[i][j] = '1';
-		ret = closed_map(map, j + 1, i);
-		if (ret)
-			return (1);
-		ret = closed_map(map, j, i + 1);
-		if (ret)
-			return (1);
-		ret = closed_map(map, j - 1, i);
-		if (ret)
-			return (1);
-		return (closed_map(map, j, i - 1));
-	}
-	return (0);
-} */
-
 void	check_is_valid_map(t_data *data)
 {
 	if (only_valid_items(data->map.array) != 0)
 		exit_free_error(data, MSG_INVALID_ITEMS);
 	if (count_spawn_pos(data, data->map.array) != 1)
 		exit_free_error(data, MSG_NB_SPAWN);
-	// if (closed_map(data->map.array, data->ply.s_posx, data->ply.s_posy) != 0)
-	// 	exit_free_error(data, MSG_MAP_NOT_CLOSED);
 }

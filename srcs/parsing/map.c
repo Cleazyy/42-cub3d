@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   map_parsing.c                                      :+:      :+:    :+:   */
+/*   map.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/20 14:49:12 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/07 08:58:15 by fluchten         ###   ########.fr       */
+/*   Created: 2023/04/09 21:35:57 by fluchten          #+#    #+#             */
+/*   Updated: 2023/04/09 22:04:06 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-static char	*allocate_map_infos(t_data *data, char *line, int start, int info)
+static char	*allocate_info(t_data *data, char *line, int start, int info)
 {
 	char	*final;
 	char	*temp;
@@ -48,22 +48,22 @@ static void	allocate_map(t_data *data, char *line)
 	free(temp);
 }
 
-static void	retrieve_map_infos(t_data *data, char *line)
+void	parse_map(t_data *data, char *line)
 {
 	static int	is_map = 0;
 
 	if (line[0] == 'N' && line[1] == 'O')
-		data->map.sprite.no_path = allocate_map_infos(data, line, 3, 1);
+		data->map.sprite.no_path = allocate_info(data, line, 3, 1);
 	else if (line[0] == 'S' && line[1] == 'O')
-		data->map.sprite.so_path = allocate_map_infos(data, line, 3, 2);
+		data->map.sprite.so_path = allocate_info(data, line, 3, 2);
 	else if (line[0] == 'W' && line[1] == 'E')
-		data->map.sprite.we_path = allocate_map_infos(data, line, 3, 3);
+		data->map.sprite.we_path = allocate_info(data, line, 3, 3);
 	else if (line[0] == 'E' && line[1] == 'A')
-		data->map.sprite.ea_path = allocate_map_infos(data, line, 3, 4);
+		data->map.sprite.ea_path = allocate_info(data, line, 3, 4);
 	else if (line[0] == 'F')
-		data->map.floor_color = allocate_map_infos(data, line, 2, 5);
+		data->map.floor_color = allocate_info(data, line, 2, 5);
 	else if (line[0] == 'C')
-		data->map.ceiling_color = allocate_map_infos(data, line, 2, 6);
+		data->map.ceiling_color = allocate_info(data, line, 2, 6);
 	else if (line[0] == '1' || line[0] == '0' || line[0] == ' ')
 	{
 		is_map = 1;
@@ -73,51 +73,4 @@ static void	retrieve_map_infos(t_data *data, char *line)
 		exit_free_error(data, MSG_MAP_NEWLINE);
 	else if (line[0] != '\n')
 		exit_free_error(data, MSG_SYNTAX_ERROR);
-}
-
-static char	*remove_map_spaces_infos(char *line)
-{
-	char	*final;
-	char	*temp;
-
-	temp = ft_strtrim(line, " ");
-	if ((temp[0] == 'N' && temp[1] == 'O')
-		|| (temp[0] == 'S' && temp[1] == 'O')
-		|| (temp[0] == 'W' && temp[1] == 'E')
-		|| (temp[0] == 'E' && temp[1] == 'A')
-		|| (temp[0] == 'F')
-		|| (temp[0] == 'C'))
-		return (temp);
-	else
-	{
-		final = ft_strdup(line);
-		return (final);
-	}
-}
-
-void	parse_map(t_data *data, char *file)
-{
-	char	*line;
-	char	*temp;
-	int		fd;
-
-	fd = open(file, O_RDONLY);
-	if (fd == -1)
-		exit_error(MSG_OPEN_FAILED);
-	initialize_map_table(data);
-	while (1)
-	{
-		line = get_next_line(fd);
-		if (!line)
-			break ;
-		temp = remove_map_spaces_infos(line);
-		free(line);
-		retrieve_map_infos(data, temp);
-		free(temp);
-	}
-	data->map.array = ft_split(data->map.str, '\n');
-	data->map.floor_rgb = parse_colors(data, data->map.floor_color);
-	data->map.ceiling_rgb = parse_colors(data, data->map.ceiling_color);
-	print_map_infos(data);
-	check_is_valid_map(data);
 }
