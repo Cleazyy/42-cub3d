@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 12:30:04 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/09 22:05:07 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/10 14:41:28 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 # include "libft.h"
 # include "get_next_line.h"
 # include "minimap.h"
+# include "parsing.h"
 # include "msg.h"
 
 # define WIN_W 1280
@@ -74,20 +75,10 @@ typedef struct s_data
 int		close_window(t_data *data);
 int		key_pressed(int key, t_data *data);
 int		init_game(t_data *data);
-/* map */
-int		parse_colors(t_data *data, char *color);
-void	check_is_valid_map(t_data *data);
-void	initialize_map_table(t_data *data);
-int		map_contains_all_infos(t_data *data);
-void	print_map_infos(t_data *data);
-void	parse_map(t_data *data, char *line);
-void	init_parsing(t_data *data, char *file);
 /* player */
 int		is_character(char c);
 /* utils */
 void	ft_mlx_pixel_put(t_img *img, int x, int y, int color);
-/* utils args */
-int		check_args(int ac, char **av);
 /* utils errors */
 int		print_error(char *str);
 void	exit_error(char *str);
