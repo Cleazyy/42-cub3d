@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 12:30:04 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/08 12:24:50 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/10 14:11:59 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,7 @@ or it is not in the right place!"
 # define MSG_MAP_DUP_INFO "Map contains duplicate information!"
 # define MSG_MAP_NEWLINE "Map contains a newline!"
 # define MSG_SYNTAX_ERROR "Map syntax error!"
+
+# define MSG_MINIMAP_SIZE "Dimensions of the minimap are too large!"
 
 #endif
