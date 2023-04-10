@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 14:49:12 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/10 14:28:42 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/10 14:52:17 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,5 +68,6 @@ void	init_parsing(t_data *data, int ac, char **av)
 	check_is_valid_map(data);
 	data->map.floor_rgb = parse_colors(data, data->map.floor_color);
 	data->map.ceiling_rgb = parse_colors(data, data->map.ceiling_color);
+	init_player_infos(data);
 	print_map_infos(data);
 }

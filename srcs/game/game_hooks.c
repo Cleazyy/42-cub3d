@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   hooks.c                                            :+:      :+:    :+:   */
+/*   game_hooks.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/19 16:11:19 by fluchten          #+#    #+#             */
-/*   Updated: 2023/03/20 16:05:54 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/10 15:39:28 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,15 @@ int	close_window(t_data *data)
 
 int	key_pressed(int key, t_data *data)
 {
-	if (key == 53)
+	if (key == KEY_CLOSE)
 		close_window(data);
+	if (key == KEY_UP)
+		data->ply.y += 10;
+	if (key == KEY_LEFT)
+		data->ply.x -= 10;
+	if (key == KEY_DOWN)
+		data->ply.y -= 10;
+	if (key == KEY_RIGHT)
+		data->ply.x += 10;
 	return (0);
 }

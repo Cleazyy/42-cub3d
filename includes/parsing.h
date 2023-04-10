@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 14:30:33 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/10 14:40:53 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/10 14:49:26 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,7 @@ void	print_map_infos(t_data *data);
 void	parse_map(t_data *data, char *line);
 /* parsing */
 void	init_parsing(t_data *data, int ac, char **av);
+/* player */
+void	init_player_infos(t_data *data);
 
 #endif
