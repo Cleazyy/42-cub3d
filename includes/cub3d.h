@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 12:30:04 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/11 21:21:47 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/11 21:24:44 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,10 +82,11 @@ typedef struct s_data
 }	t_data;
 
 /* game */
-void	display_colors(t_data *data);
 int		init_game(t_data *data);
 int		close_window(t_data *data);
 int		key_pressed(int key, t_data *data);
+/* graphics */
+void	display_colors(t_data *data);
 /* player */
 int		is_character(char c);
 /* utils */
