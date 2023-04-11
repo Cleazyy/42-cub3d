@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 12:30:04 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/10 15:30:40 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/11 13:27:41 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <stdio.h>
 # include <fcntl.h>
 # include <limits.h>
+# include <math.h>
 # include <mlx.h>
 # include "libft.h"
 # include "get_next_line.h"
@@ -55,6 +56,7 @@ typedef struct s_ply
 {
 	double	x;
 	double	y;
+	double	angle;
 }	t_ply;
 
 typedef struct s_map
