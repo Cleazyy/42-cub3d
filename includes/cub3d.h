@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 12:30:04 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/11 13:27:41 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/11 14:51:07 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,12 +74,15 @@ typedef struct s_data
 {
 	void		*mlx;
 	void		*win;
+	int			win_w;
+	int			win_h;
 	t_map		map;
 	t_ply		ply;
 	t_img		img;
 }	t_data;
 
 /* game */
+void	display_colors(t_data *data);
 int		close_window(t_data *data);
 int		key_pressed(int key, t_data *data);
 int		init_game(t_data *data);

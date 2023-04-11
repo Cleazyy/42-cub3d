@@ -6,7 +6,7 @@
 #    By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/10 12:24:21 by fluchten          #+#    #+#              #
-#    Updated: 2023/04/10 14:48:25 by fluchten         ###   ########.fr        #
+#    Updated: 2023/04/11 14:45:22 by fluchten         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,7 @@ OBJS_DIR = objs
 
 SRCS =	bonus/minimap_init.c \
 		bonus/minimap_utils.c \
+		game/game_colors.c \
 		game/game_hooks.c \
 		game/game_init.c \
 		parsing/args.c \
