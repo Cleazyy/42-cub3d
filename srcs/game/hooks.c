@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/19 16:11:19 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/10 15:39:28 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/11 20:38:11 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,12 @@ int	key_pressed(int key, t_data *data)
 	if (key == KEY_CLOSE)
 		close_window(data);
 	if (key == KEY_UP)
-		data->ply.y += 10;
+		data->ply.y -= 0.5;
 	if (key == KEY_LEFT)
-		data->ply.x -= 10;
+		data->ply.x -= 0.5;
 	if (key == KEY_DOWN)
-		data->ply.y -= 10;
+		data->ply.y += 0.5;
 	if (key == KEY_RIGHT)
-		data->ply.x += 10;
+		data->ply.x += 0.5;
 	return (0);
 }

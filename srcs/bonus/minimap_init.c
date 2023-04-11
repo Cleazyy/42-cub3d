@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 14:26:19 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/11 14:53:16 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/11 21:19:42 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 static void	initialize_minimap_table(t_data *data, t_minimap *mini)
 {
+	mini->data = data;
 	mini->x = 10;
 	mini->y = 10;
 	mini->w = MINIMAP_WIDTH;
@@ -22,7 +23,8 @@ static void	initialize_minimap_table(t_data *data, t_minimap *mini)
 	mini->h = MINIMAP_HEIGHT;
 	if (mini->h > (data->win_h - (mini->y * 2)))
 		exit_free_error(data, MSG_MINIMAP_SIZE);
-	mini->rect = 8;
+	mini->rect = 10;
+	mini->scale = mini->rect * 2;
 	mini->clr_back = 0x1e202a;
 	mini->clr_out = 0x63656e;
 	mini->clr_wall = 0x2b2d3d;
@@ -36,5 +38,6 @@ void	init_minimap(t_data *data)
 
 	initialize_minimap_table(data, &mini);
 	draw_minimap_background(data, &mini);
+	draw_minimap_map(data, &mini);
 	draw_minimap_player(data, &mini);
 }
