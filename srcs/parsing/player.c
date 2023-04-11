@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 14:42:58 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/11 13:29:09 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/11 13:32:57 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,16 +44,19 @@ static char	get_player_spawn_pos(t_data *data)
 	return (point);
 }
 
-static void	get_player_spawn_angle(t_data *data, char point)
+static float	get_player_spawn_angle(char point)
 {
+	float	result;
+
 	if (point == 'N')
-		data->ply.angle = M_PI / 2;
+		result = M_PI / 2;
 	if (point == 'S')
-		data->ply.angle = (3 * M_PI) / 2;
+		result = (3 * M_PI) / 2;
 	if (point == 'W')
-		data->ply.angle = M_PI;
+		result = M_PI;
 	if (point == 'E')
-		data->ply.angle = 0;
+		result = 0;
+	return (result);
 }
 
 void	init_player_infos(t_data *data)
@@ -62,5 +65,5 @@ void	init_player_infos(t_data *data)
 
 	initialize_player_table(data);
 	point = get_player_spawn_pos(data);
-	get_player_spawn_angle(data, point);
+	data->ply.angle = get_player_spawn_angle(point);
 }
