@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 14:26:19 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/11 21:19:42 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/12 08:04:14 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,5 @@ void	init_minimap(t_data *data)
 	initialize_minimap_table(data, &mini);
 	draw_minimap_background(data, &mini);
 	draw_minimap_map(data, &mini);
-	draw_minimap_player(data, &mini);
+	draw_minimap_player(&mini);
 }
