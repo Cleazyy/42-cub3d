@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   colors.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mgomes-d <mgomes-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 14:44:39 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/11 21:27:33 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/12 12:34:12 by mgomes-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,4 +31,9 @@ void	display_colors(t_data *data)
 		}
 		y++;
 	}
+}
+
+void	draw_angle(t_data *data)
+{
+	draw_line(data, &data->ply);
 }

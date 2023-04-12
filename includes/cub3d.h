@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mgomes-d <mgomes-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 12:30:04 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/12 09:46:54 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/12 12:35:42 by mgomes-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@
 # define KEY_CLOSE 53
 # define KEY_A_L 123
 # define KEY_A_R 124
+# define OFFSET 64
 
 typedef struct s_img
 {
@@ -58,6 +59,8 @@ typedef struct s_ply
 {
 	double	x;
 	double	y;
+	double	dx;
+	double	dy;
 	double	angle;
 }	t_ply;
 
@@ -89,6 +92,8 @@ int		close_window(t_data *data);
 int		key_pressed(int key, t_data *data);
 /* graphics */
 void	display_colors(t_data *data);
+void	draw_line(t_data *data, t_ply *player);
+void	draw_angle(t_data *data);
 /* player */
 int		is_character(char c);
 /* utils */

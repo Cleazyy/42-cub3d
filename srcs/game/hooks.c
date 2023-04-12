@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   hooks.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mgomes-d <mgomes-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/19 16:11:19 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/12 10:48:10 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/12 12:29:52 by mgomes-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,9 +52,21 @@ void	update_pos(t_data *data, int key)
 void	update_angle(t_data *data, int key)
 {
 	if (key == KEY_A_L)
+	{
 		data->ply.angle -= 0.1;
+		if (data->ply.angle < 0)
+			data->ply.angle += 2 * M_PI;
+		if (data->ply.angle > 2 * M_PI)
+			data->ply.angle -= 2 * M_PI;
+	}
 	if (key == KEY_A_R)
+	{
 		data->ply.angle += 0.1;
+		if (data->ply.angle < 0)
+			data->ply.angle += 2 * M_PI;
+		if (data->ply.angle > 2 * M_PI)
+			data->ply.angle -= 2 * M_PI;
+	}
 }
 
 int	key_pressed(int key, t_data *data)

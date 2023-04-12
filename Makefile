@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+         #
+#    By: mgomes-d <mgomes-d@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/10 12:24:21 by fluchten          #+#    #+#              #
-#    Updated: 2023/04/11 21:25:01 by fluchten         ###   ########.fr        #
+#    Updated: 2023/04/12 08:49:59 by mgomes-d         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,6 +26,7 @@ SRCS =	bonus/minimap_init.c \
 		game/hooks.c \
 		game/game.c \
 		graphics/colors.c \
+		graphics/draw_line.c \
 		parsing/args.c \
 		parsing/colors.c \
 		parsing/map_checks.c \
