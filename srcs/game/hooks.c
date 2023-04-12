@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/19 16:11:19 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/12 09:47:13 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/12 10:48:10 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,9 +52,9 @@ void	update_pos(t_data *data, int key)
 void	update_angle(t_data *data, int key)
 {
 	if (key == KEY_A_L)
-		data->ply.angle -= 2;
+		data->ply.angle -= 0.1;
 	if (key == KEY_A_R)
-		data->ply.angle += 2;
+		data->ply.angle += 0.1;
 }
 
 int	key_pressed(int key, t_data *data)
