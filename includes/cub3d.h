@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 12:30:04 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/11 21:24:44 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/12 09:46:54 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@
 # define KEY_LEFT 0
 # define KEY_RIGHT 2 
 # define KEY_CLOSE 53
+# define KEY_A_L 123
+# define KEY_A_R 124
 
 typedef struct s_img
 {
