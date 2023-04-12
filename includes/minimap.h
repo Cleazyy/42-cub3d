@@ -6,15 +6,12 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/09 15:08:29 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/12 08:03:59 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/12 08:15:54 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MINIMAP_H
 # define MINIMAP_H
-
-# define MINIMAP_WIDTH 175
-# define MINIMAP_HEIGHT 175
 
 typedef struct s_data	t_data;
 
