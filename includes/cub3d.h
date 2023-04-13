@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mgomes-d <mgomes-d@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 12:30:04 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/12 12:35:42 by mgomes-d         ###   ########.fr       */
+/*   Updated: 2023/04/13 08:49:51 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,10 @@
 # include <stdio.h>
 # include <fcntl.h>
 # include <limits.h>
+# include <stdbool.h>
 # include <math.h>
 # include <mlx.h>
+
 # include "libft.h"
 # include "get_next_line.h"
 # include "minimap.h"
@@ -34,9 +36,19 @@
 # define KEY_LEFT 0
 # define KEY_RIGHT 2 
 # define KEY_CLOSE 53
-# define KEY_A_L 123
-# define KEY_A_R 124
+# define KEY_ARR_L 123
+# define KEY_ARR_R 124
 # define OFFSET 64
+
+typedef struct s_key
+{
+	bool	w;
+	bool	a;
+	bool	s;
+	bool	d;
+	bool	arr_l;
+	bool	arr_r;
+}	t_key;
 
 typedef struct s_img
 {
@@ -81,6 +93,7 @@ typedef struct s_data
 	void		*win;
 	int			win_w;
 	int			win_h;
+	t_key		key;
 	t_map		map;
 	t_ply		ply;
 	t_img		img;
@@ -90,6 +103,9 @@ typedef struct s_data
 int		init_game(t_data *data);
 int		close_window(t_data *data);
 int		key_pressed(int key, t_data *data);
+int		key_release(int key, t_data *data);
+void	initialize_key_table(t_data *data);
+void	key_loop(t_data *data);
 /* graphics */
 void	display_colors(t_data *data);
 void	draw_line(t_data *data, t_ply *player);

@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 14:49:12 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/11 14:51:25 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/13 08:50:12 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ void	init_parsing(t_data *data, int ac, char **av)
 		exit_error(MSG_INVALID_MAP);
 	file = av[1];
 	initialize_map_table(data);
+	initialize_key_table(data);
 	read_file(data, file);
 	data->map.array = ft_split(data->map.str, '\n');
 	check_is_valid_map(data);

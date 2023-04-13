@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mgomes-d <mgomes-d@student.42.fr>          +#+  +:+       +#+         #
+#    By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/10 12:24:21 by fluchten          #+#    #+#              #
-#    Updated: 2023/04/12 08:49:59 by mgomes-d         ###   ########.fr        #
+#    Updated: 2023/04/13 08:47:53 by fluchten         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,8 +23,9 @@ OBJS_DIR = objs
 
 SRCS =	bonus/minimap_init.c \
 		bonus/minimap_utils.c \
-		game/hooks.c \
 		game/game.c \
+		game/hooks.c \
+		game/keys.c \
 		graphics/colors.c \
 		graphics/draw_line.c \
 		parsing/args.c \

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   game.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mgomes-d <mgomes-d@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 14:29:04 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/12 07:49:38 by mgomes-d         ###   ########.fr       */
+/*   Updated: 2023/04/13 08:45:09 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 int	init_game(t_data *data)
 {
+	key_loop(data);
 	display_colors(data);
 	draw_angle(data);
 	init_minimap(data);
