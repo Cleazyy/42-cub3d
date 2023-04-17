@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 14:30:33 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/10 14:49:26 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/17 09:56:43 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ int		check_map_name(char **av);
 int		parse_colors(t_data *data, char *color);
 /* map checks */
 void	check_is_valid_map(t_data *data);
+/* map closed */
+int		is_closed_map(char **map);
 /* map utils */
 void	initialize_map_table(t_data *data);
 int		map_contains_all_infos(t_data *data);

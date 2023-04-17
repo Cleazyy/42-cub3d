@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 08:26:30 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/10 15:27:56 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/17 09:56:43 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,43 +14,47 @@
 
 static int	only_valid_items(char **map)
 {
-	int	i;
-	int	j;
+	int	y;
+	int	x;
 
-	i = 0;
-	while (map[i])
+	y = 0;
+	while (map[y])
 	{
-		j = 0;
-		while (map[i][j])
+		x = 0;
+		while (map[y][x])
 		{
-			if (map[i][j] != '0' && map[i][j] != '1' && map[i][j] != ' '
-				&& !is_character(map[i][j]))
+			if (map[y][x] != '0' && map[y][x] != '1' && map[y][x] != ' '
+				&& !is_character(map[y][x]))
 				return (1);
-			j++;
+			x++;
 		}
-		i++;
+		y++;
 	}
 	return (0);
 }
 
-static int	count_spawn_pos(char **map)
+static int	count_spawn_pos(t_data *data, char **map)
 {
 	int	count;
-	int	i;
-	int	j;
+	int	y;
+	int	x;
 
-	i = 0;
+	y = 0;
 	count = 0;
-	while (map[i])
+	while (map[y])
 	{
-		j = 0;
-		while (map[i][j])
+		x = 0;
+		while (map[y][x])
 		{
-			if (is_character(map[i][j]))
+			if (is_character(map[y][x]))
+			{
 				count++;
-			j++;
+				data->ply.spawn_x = x;
+				data->ply.spawn_y = y;
+			}
+			x++;
 		}
-		i++;
+		y++;
 	}
 	return (count);
 }
@@ -59,6 +63,8 @@ void	check_is_valid_map(t_data *data)
 {
 	if (only_valid_items(data->map.array) != 0)
 		exit_free_error(data, MSG_INVALID_ITEMS);
-	if (count_spawn_pos(data->map.array) != 1)
+	if (count_spawn_pos(data, data->map.array) != 1)
 		exit_free_error(data, MSG_NB_SPAWN);
+	if (is_closed_map(data->map.array) != 0)
+		exit_free_error(data, MSG_MAP_NOT_CLOSED);
 }

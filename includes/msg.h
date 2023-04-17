@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 12:30:04 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/10 14:11:59 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/17 09:54:16 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 
 # define MSG_INVALID_ITEMS "Map contains invalid items!"
 # define MSG_NB_SPAWN "Map does not exactly have a spawn!"
-# define MSG_MAP_NOT_CLOSED "Map is not closed!"
+# define MSG_MAP_NOT_CLOSED "Map is not surrounded by walls!"
 # define MSG_MAP_ALL_INFOS "Map does not contain all the information \
 or it is not in the right place!"
 # define MSG_MAP_DUP_INFO "Map contains duplicate information!"
