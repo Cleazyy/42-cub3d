@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/09 21:35:57 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/17 07:20:47 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/17 10:43:58 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,11 @@ static char	*allocate_info(t_data *data, char *line, int start, int info)
 	if (line[len - 1] == '\n')
 		new_line = 1;
 	temp = ft_substr(line, start, (len - start) - new_line);
+	if (!temp)
+		exit_free_error(data, MSG_MALLOC_ERR);
 	final = ft_strtrim(temp, " ");
+	if (!final)
+		exit_free_error(data, MSG_MALLOC_ERR);
 	free(temp);
 	return (final);
 }
@@ -43,8 +47,12 @@ static void	allocate_map(t_data *data, char *line)
 	if (map_contains_all_infos(data) != 0)
 		exit_free_error(data, MSG_MAP_ALL_INFOS);
 	temp = ft_strdup(data->map.str);
+	if (!temp)
+		exit_free_error(data, MSG_MALLOC_ERR);
 	free(data->map.str);
 	data->map.str = ft_strjoin(temp, line);
+	if (!data->map.str)
+		exit_free_error(data, MSG_MALLOC_ERR);
 	free(temp);
 }
 

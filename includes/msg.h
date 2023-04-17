@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 12:30:04 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/17 09:54:16 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/17 10:41:27 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define MSG_H
 
 # define MSG_ERROR "\033[1;31mError\033[0m"
+
+# define MSG_MALLOC_ERR "malloc() failed!"
 
 # define MSG_MLX_FAILED "Mlx initialization failed!"
 

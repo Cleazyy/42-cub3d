@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 07:25:45 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/09 22:04:05 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/17 10:44:51 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,8 @@ int	parse_colors(t_data *data, char *color)
 	int		blue;
 
 	rgb_array = ft_split(color, ',');
+	if (!rgb_array)
+		exit_free_error(data, MSG_MALLOC_ERR);
 	if (ft_array_len(rgb_array) != 3)
 		exit_free_error(data, "RGB format is not valid!");
 	red = ft_atoi_rgb(rgb_array[0]);
