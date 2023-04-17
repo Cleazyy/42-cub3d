@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/09 21:35:57 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/09 22:04:06 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/17 07:20:47 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,17 +52,17 @@ void	parse_map(t_data *data, char *line)
 {
 	static int	is_map = 0;
 
-	if (line[0] == 'N' && line[1] == 'O')
+	if (ft_strncmp("NO ", line, 3) == 0)
 		data->map.sprite.no_path = allocate_info(data, line, 3, 1);
-	else if (line[0] == 'S' && line[1] == 'O')
+	else if (ft_strncmp("SO ", line, 3) == 0)
 		data->map.sprite.so_path = allocate_info(data, line, 3, 2);
-	else if (line[0] == 'W' && line[1] == 'E')
+	else if (ft_strncmp("WE ", line, 3) == 0)
 		data->map.sprite.we_path = allocate_info(data, line, 3, 3);
-	else if (line[0] == 'E' && line[1] == 'A')
+	else if (ft_strncmp("EA ", line, 3) == 0)
 		data->map.sprite.ea_path = allocate_info(data, line, 3, 4);
-	else if (line[0] == 'F')
+	else if (ft_strncmp("F ", line, 2) == 0)
 		data->map.floor_color = allocate_info(data, line, 2, 5);
-	else if (line[0] == 'C')
+	else if (ft_strncmp("C ", line, 2) == 0)
 		data->map.ceiling_color = allocate_info(data, line, 2, 6);
 	else if (line[0] == '1' || line[0] == '0' || line[0] == ' ')
 	{
