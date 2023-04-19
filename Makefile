@@ -6,7 +6,7 @@
 #    By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/10 12:24:21 by fluchten          #+#    #+#              #
-#    Updated: 2023/04/17 09:56:58 by fluchten         ###   ########.fr        #
+#    Updated: 2023/04/19 07:34:33 by fluchten         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,6 @@ SRCS =	bonus/minimap_init.c \
 		parsing/map.c \
 		parsing/parsing.c \
 		parsing/player.c \
-		player/player_utils.c \
 		utils/errors.c \
 		utils/free.c \
 		utils/utils.c \

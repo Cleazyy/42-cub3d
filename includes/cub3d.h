@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 12:30:04 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/17 09:18:59 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/19 07:34:46 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@
 # include "get_next_line.h"
 # include "minimap.h"
 # include "parsing.h"
-# include "msg.h"
+# include "graphics.h"
 
 # define WIN_W 1280
 # define WIN_H 720
@@ -39,6 +39,10 @@
 # define KEY_ARR_L 123
 # define KEY_ARR_R 124
 # define OFFSET 64
+
+# define MSG_ERROR "\033[1;31mError\033[0m"
+# define MSG_MALLOC_ERR "malloc() failed!"
+# define MSG_MLX_FAILED "Mlx initialization failed!"
 
 typedef struct s_key
 {
@@ -112,10 +116,9 @@ void	key_loop(t_data *data);
 void	display_colors(t_data *data);
 void	draw_line(t_data *data, t_ply *player);
 void	draw_angle(t_data *data);
-/* player */
-int		is_character(char c);
 /* utils */
 void	ft_mlx_pixel_put(t_img *img, int x, int y, int color);
+int		is_character(char c);
 /* utils errors */
 int		print_error(char *str);
 void	exit_error(char *str);
