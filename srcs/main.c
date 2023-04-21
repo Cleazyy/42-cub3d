@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 12:28:20 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/13 08:40:26 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/21 17:30:28 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	main(int ac, char **av)
 		return (print_error(MSG_MLX_FAILED));
 	data.img.ptr = mlx_new_image(data.mlx, data.win_w, data.win_h);
 	data.img.addr = mlx_get_data_addr(data.img.ptr, &data.img.bpp,
-			&data.img.line_len, &data.img.endian);
+			&data.img.line_length, &data.img.endian);
 	mlx_hook(data.win, 2, 0, key_pressed, &data);
 	mlx_hook(data.win, 3, 0, key_release, &data);
 	mlx_hook(data.win, 17, 0, close_window, &data);

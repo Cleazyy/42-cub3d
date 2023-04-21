@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   colors.c                                           :+:      :+:    :+:   */
+/*   draw_bg.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mgomes-d <mgomes-d@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/11 14:44:39 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/12 12:34:12 by mgomes-d         ###   ########.fr       */
+/*   Created: 2023/04/21 17:35:03 by fluchten          #+#    #+#             */
+/*   Updated: 2023/04/21 17:41:47 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-void	display_colors(t_data *data)
+void	draw_background(t_data *data)
 {
 	int	y;
 	int	x;
@@ -31,9 +31,4 @@ void	display_colors(t_data *data)
 		}
 		y++;
 	}
-}
-
-void	draw_angle(t_data *data)
-{
-	draw_line(data, &data->ply);
 }
