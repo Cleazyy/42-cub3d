@@ -6,7 +6,7 @@
 #    By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/10 12:24:21 by fluchten          #+#    #+#              #
-#    Updated: 2023/04/19 07:34:33 by fluchten         ###   ########.fr        #
+#    Updated: 2023/04/20 09:46:34 by fluchten         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,6 +28,7 @@ SRCS =	bonus/minimap_init.c \
 		game/keys.c \
 		graphics/colors.c \
 		graphics/draw_line.c \
+		graphics/raycasting.c \
 		parsing/args.c \
 		parsing/colors.c \
 		parsing/map_checks.c \

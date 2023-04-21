@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 12:30:04 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/19 07:34:46 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/21 09:01:03 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,8 +73,6 @@ typedef struct s_sprite
 
 typedef struct s_ply
 {
-	int		spawn_x;
-	int		spawn_y;
 	double	x;
 	double	y;
 	double	dx;
@@ -102,6 +100,7 @@ typedef struct s_data
 	t_key		key;
 	t_map		map;
 	t_ply		ply;
+	t_ray		ray;
 	t_img		img;
 }	t_data;
 

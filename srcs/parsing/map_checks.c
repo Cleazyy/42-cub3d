@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 08:26:30 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/17 09:56:43 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/21 09:15:50 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static int	only_valid_items(char **map)
 	return (0);
 }
 
-static int	count_spawn_pos(t_data *data, char **map)
+static int	count_spawn_pos(char **map)
 {
 	int	count;
 	int	y;
@@ -47,11 +47,7 @@ static int	count_spawn_pos(t_data *data, char **map)
 		while (map[y][x])
 		{
 			if (is_character(map[y][x]))
-			{
 				count++;
-				data->ply.spawn_x = x;
-				data->ply.spawn_y = y;
-			}
 			x++;
 		}
 		y++;
@@ -63,7 +59,7 @@ void	check_is_valid_map(t_data *data)
 {
 	if (only_valid_items(data->map.array) != 0)
 		exit_free_error(data, MSG_INVALID_ITEMS);
-	if (count_spawn_pos(data, data->map.array) != 1)
+	if (count_spawn_pos(data->map.array) != 1)
 		exit_free_error(data, MSG_NB_SPAWN);
 	if (is_closed_map(data->map.array) != 0)
 		exit_free_error(data, MSG_MAP_NOT_CLOSED);
