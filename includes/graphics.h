@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 07:25:30 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/21 11:55:49 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/21 12:34:05 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,11 @@ typedef struct s_ray
 	double	step_y;
 	double	side;
 	double	perpwalldist;
+	int		start;
+	int		end;
 }	t_ray;
 
+void	update_ray_values(t_data *data, t_ray *ray, int x);
 void	raycasting(t_data *data);
 
 #endif

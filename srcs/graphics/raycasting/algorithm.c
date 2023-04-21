@@ -1,37 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   raycasting.c                                       :+:      :+:    :+:   */
+/*   algorithm.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/20 09:27:15 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/21 12:01:34 by fluchten         ###   ########.fr       */
+/*   Created: 2023/04/21 12:13:29 by fluchten          #+#    #+#             */
+/*   Updated: 2023/04/21 12:40:48 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
-
-static void	initialize_ray_table(t_ray *ray)
-{
-	ray->dir_x = 0;
-	ray->dir_y = 0;
-	ray->plane_x = 0;
-	ray->plane_y = 0;
-	ray->cam_x = 0;
-	ray->ray_dir_x = 0;
-	ray->ray_dir_y = 0;
-	ray->map_x = 0;
-	ray->map_y = 0;
-	ray->delta_dist_x = 0;
-	ray->delta_dist_y = 0;
-	ray->side_dist_x = 0;
-	ray->side_dist_y = 0;
-	ray->step_x = 0;
-	ray->step_y = 0;
-	ray->side = 0;
-	ray->perpwalldist = 0;
-}
 
 static void	update_delta_dist(t_ray *ray)
 {
@@ -93,7 +72,7 @@ static void	dda_algorithm(t_data *data, t_ray *ray)
 	}
 }
 
-static void	update_values(t_data *data, t_ray *ray, int x)
+void	update_ray_values(t_data *data, t_ray *ray, int x)
 {
 	ray->dir_x = 0;
 	ray->dir_y = -1;
@@ -111,17 +90,4 @@ static void	update_values(t_data *data, t_ray *ray, int x)
 		ray->perpwalldist = (ray->side_dist_y - ray->delta_dist_x);
 	else
 		ray->perpwalldist = (ray->side_dist_y - ray->delta_dist_y);
-}
-
-void	raycasting(t_data *data)
-{
-	int	x;
-
-	initialize_ray_table(&data->ray);
-	x = 0;
-	while (x < data->win_w)
-	{
-		update_values(data, &data->ray, x);
-		x++;
-	}
 }
