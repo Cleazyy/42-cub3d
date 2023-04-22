@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 14:29:04 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/22 20:25:03 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/22 20:59:24 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,6 @@ static void	init_game_hooks(t_data *data)
 	mlx_hook(data->win, 2, 0, key_pressed, data);
 	mlx_hook(data->win, 3, 0, key_release, data);
 	mlx_hook(data->win, 17, 0, close_window, data);
-	// mlx_hook(data->win, 6, 0, mouse_rotate, map);
 	mlx_loop_hook(data->mlx, game_loop, data);
 	mlx_loop(data->mlx);
 }
