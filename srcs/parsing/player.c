@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 14:42:58 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/22 20:03:15 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/22 20:16:33 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ static char	get_player_spawn_pos(t_data *data)
 	return (dir);
 }
 
-static void	get_player_spawn_angle(t_data *data, char dir)
+static void	get_player_spawn_dir(t_data *data, char dir)
 {
 	if (dir == 'N')
 	{
@@ -88,6 +88,6 @@ static void	get_player_camera_plane(t_data *data, char dir)
 void	init_player_infos(t_data *data)
 {
 	data->map.dir = get_player_spawn_pos(data);
-	get_player_spawn_angle(data, data->map.dir);
+	get_player_spawn_dir(data, data->map.dir);
 	get_player_camera_plane(data, data->map.dir);
 }
