@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/09 15:30:46 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/22 17:08:40 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/22 19:58:06 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void	draw_minimap_background(t_data *data, t_minimap *mini)
 	}
 }
 
-void	draw_minimap_map(t_data *data, t_minimap *mini)
+void	draw_minimap_map(t_ray *ray, t_minimap *mini, char **map)
 {
 	double	pos_x;
 	double	pos_y;
@@ -69,18 +69,18 @@ void	draw_minimap_map(t_data *data, t_minimap *mini)
 	pos_x = 0;
 	pos_y = 0;
 	y = 0;
-	while (data->map.array[y])
+	while (map[y])
 	{
 		x = 0;
-		while (data->map.array[y][x])
+		while (map[y][x])
 		{
-			pos_x = ((mini->w / mini->scale) - (data->ray.x - x))
+			pos_x = ((mini->w / mini->scale) - (ray->x - x))
 				* mini->rect + mini->x;
-			pos_y = ((mini->h / mini->scale) - (data->ray.y - y))
+			pos_y = ((mini->h / mini->scale) - (ray->y - y))
 				* mini->rect + mini->y;
-			if (data->map.array[y][x] == '1')
+			if (map[y][x] == '1')
 				draw_minimap_rect(mini, pos_x, pos_y, mini->clr_wall);
-			else if (data->map.array[y][x] == '0')
+			if (map[y][x] == '0' || is_character(map[y][x]))
 				draw_minimap_rect(mini, pos_x, pos_y, mini->clr_floor);
 			x++;
 		}
@@ -93,7 +93,7 @@ void	draw_minimap_player(t_minimap *mini)
 	double	pos_x;
 	double	pos_y;
 
-	pos_x = mini->x + (mini->w / 2) - (mini->rect / 2);
-	pos_y = mini->y + (mini->h / 2) - (mini->rect / 2);
+	pos_x = mini->x + (mini->w / 2) - (mini->rect);
+	pos_y = mini->y + (mini->h / 2) - (mini->rect);
 	draw_minimap_rect(mini, pos_x, pos_y, mini->clr_ply);
 }
