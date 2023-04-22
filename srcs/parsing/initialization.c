@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 10:42:17 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/22 20:19:14 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/22 20:36:01 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,14 @@ static void	initialize_map_table(t_data *data)
 
 	data->map.str = NULL;
 	data->map.array = NULL;
-	i = -1;
-	while (++i < 4)
+	data->img.ptr = NULL;
+	i = 0;
+	while (i < 4)
+	{
+		data->mat[i].ptr = NULL;
 		data->mat[i].path = NULL;
+		i++;
+	}
 	data->map.floor_color = NULL;
 	data->map.ceiling_color = NULL;
 	data->map.floor_rgb = 0;
