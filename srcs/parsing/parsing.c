@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 14:49:12 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/17 10:43:02 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/22 11:53:19 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,8 +64,7 @@ void	init_parsing(t_data *data, int ac, char **av)
 	if (check_map_name(av) != 0)
 		exit_error(MSG_INVALID_MAP);
 	file = av[1];
-	initialize_map_table(data);
-	initialize_key_table(data);
+	parsing_tables_initialization(data);
 	read_file(data, file);
 	data->map.array = ft_split(data->map.str, '\n');
 	if (!data->map.array)
@@ -73,8 +72,6 @@ void	init_parsing(t_data *data, int ac, char **av)
 	data->map.floor_rgb = parse_colors(data, data->map.floor_color);
 	data->map.ceiling_rgb = parse_colors(data, data->map.ceiling_color);
 	check_is_valid_map(data);
-	data->win_w = WIN_W;
-	data->win_h = WIN_H;
 	init_player_infos(data);
 	print_map_infos(data);
 }

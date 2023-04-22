@@ -6,11 +6,17 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 10:42:17 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/22 11:15:45 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/22 11:54:41 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
+
+static void initialize_data_table(t_data *data)
+{
+	data->win_w = WIN_W;
+	data->win_h = WIN_H;
+}
 
 static void	initialize_map_table(t_data *data)
 {
@@ -26,19 +32,6 @@ static void	initialize_map_table(t_data *data)
 	data->map.ceiling_rgb = 0;
 }
 
-static void	initialize_img_table(t_data *data)
-{
-	int	i;
-
-	i = 0;
-	while (i < 5)
-	{
-		data->img[i].ptr = NULL;
-		data->img[i].path = NULL;
-		i++;
-	}
-}
-
 static void	initialize_key_table(t_data *data)
 {
 	data->key.w = false;
@@ -51,7 +44,7 @@ static void	initialize_key_table(t_data *data)
 
 void	parsing_tables_initialization(t_data *data)
 {
+	initialize_data_table(data);
 	initialize_map_table(data);
-	initialize_img_table(data);
 	initialize_key_table(data);
 }
