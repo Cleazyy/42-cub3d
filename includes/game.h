@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 07:25:30 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/22 17:11:22 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/22 17:31:06 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ typedef struct s_game
 {
 	int		w;
 	int		h;
-	int		mat_size;
+	int		mat_px;
 	double	move_speed;
 	double	rot_speed;
 }	t_game;

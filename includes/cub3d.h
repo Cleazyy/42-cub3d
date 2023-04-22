@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 12:30:04 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/22 17:25:34 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/22 17:33:48 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,9 @@
 
 # define WIN_W 1280
 # define WIN_H 720
-# define MOVE_SPEED 0.09
-# define ROT_SPEED 0.09
-# define SPRITES_SIZE 64
+# define MAT_PX 64
+# define MOVE_SPEED 0.05
+# define ROT_SPEED 0.07
 
 # define KEY_W 13
 # define KEY_A 0
