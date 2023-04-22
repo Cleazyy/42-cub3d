@@ -6,13 +6,11 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 14:29:04 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/22 16:15:33 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/22 16:45:59 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
-
-void	raycasting_dev(t_data *data);
 
 static int	game_loop(t_data *data)
 {

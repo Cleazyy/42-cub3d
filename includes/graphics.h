@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 07:25:30 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/22 16:39:31 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/22 16:44:41 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define GRAPHICS_H
 
 typedef struct s_img	t_img;
-typedef struct s_ply	t_ply;
 typedef struct s_data	t_data;
 
 typedef struct s_ray
@@ -45,21 +44,19 @@ typedef struct s_ray
 	double	tex_pos;
 }	t_ray;
 
-/* raycasting */
-int		get_color(t_data *data, int x, int y, int i);
-void	draw_map(t_data *data, t_ray *ray, int x);
+/* algorithm */
 void	update_player_infos(t_data *data, t_ray *ray, int x);
-void	init_raycasting(t_data *data);
 /* draw_bg */
 void	draw_background(t_data *data);
-/* draw_line */
-void	draw_line(t_data *data, t_ply *player);
-/* draw_pixel */
-void	ft_mlx_pixel_put(t_img *img, int x, int y, int color);
+/* draw_map */
+void	draw_map(t_data *data, t_ray *ray, int x);
+/* raycasting */
+void	init_raycasting(t_data *data);
 /* utils */
-void	draw_angle(t_data *data);
+void	ft_mlx_pixel_put(t_img *img, int x, int y, int color);
 int		get_line_height(t_data *data);
 int		get_lowest_pixel(t_data *data, int line_height);
 int		get_highest_pixel(t_data *data, int line_height);
+int		get_color(t_data *data, int x, int y, int i);
 
 #endif
