@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 08:44:46 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/22 13:01:34 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/22 16:38:19 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	map_contains_all_infos(t_data *data)
 			return (1);
 		i++;
 	}
-	if (!data->map.floor_color || !data->map.ceiling_color)	
+	if (!data->map.floor_color || !data->map.ceiling_color)
 		return (1);
 	return (0);
 }

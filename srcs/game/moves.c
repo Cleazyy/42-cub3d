@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 15:27:55 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/22 15:44:53 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/22 16:37:49 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,17 +22,17 @@ static void	move_up(t_ply *ply, t_ray *ray, char **map, double speed)
 
 static void	move_left(t_ply *ply, t_ray *ray, char **map, double speed)
 {
-	if(map[(int)ply->y][(int)(ply->x - ray->plane_x * speed)] != '1')
+	if (map[(int)ply->y][(int)(ply->x - ray->plane_x * speed)] != '1')
 		ply->x -= ray->plane_x * speed;
-	if(map[(int)(ply->y - ray->plane_y * speed)][(int)ply->x] != '1')
+	if (map[(int)(ply->y - ray->plane_y * speed)][(int)ply->x] != '1')
 		ply->y -= ray->plane_y * speed;
 }
 
 static void	move_down(t_ply *ply, t_ray *ray, char **map, double speed)
 {
-	if(map[(int)ply->y][(int)(ply->x - ray->dir_x * speed)] != '1')
+	if (map[(int)ply->y][(int)(ply->x - ray->dir_x * speed)] != '1')
 		ply->x -= ray->dir_x * speed;
-	if(map[(int)(ply->y - ray->dir_y * speed)][(int)ply->x] != '1')
+	if (map[(int)(ply->y - ray->dir_y * speed)][(int)ply->x] != '1')
 		ply->y -= ray->dir_y * speed;
 }
 

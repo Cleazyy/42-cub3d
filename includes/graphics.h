@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 07:25:30 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/22 16:34:06 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/22 16:39:31 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,5 +58,8 @@ void	draw_line(t_data *data, t_ply *player);
 void	ft_mlx_pixel_put(t_img *img, int x, int y, int color);
 /* utils */
 void	draw_angle(t_data *data);
+int		get_line_height(t_data *data);
+int		get_lowest_pixel(t_data *data, int line_height);
+int		get_highest_pixel(t_data *data, int line_height);
 
 #endif

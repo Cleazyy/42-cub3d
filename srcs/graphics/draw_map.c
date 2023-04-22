@@ -6,35 +6,31 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 16:20:26 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/22 16:34:40 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/22 16:38:57 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-static int	get_line_height(t_data *data)
+void	draw_background(t_data *data)
 {
-	return ((int)(data->win_h / data->ray.perpwalldist));
-}
+	int	y;
+	int	x;
 
-static int	get_lowest_pixel(t_data *data, int line_height)
-{
-	int	draw_start;
-
-	draw_start = -line_height / 2 + data->win_h / 2;
-	if (draw_start < 0)
-		draw_start = 0;
-	return (draw_start);
-}
-
-static int	get_highest_pixel(t_data *data, int line_height)
-{
-	int	draw_end;
-
-	draw_end = line_height / 2 + data->win_h / 2;
-	if (draw_end >= data->win_h)
-		draw_end = data->win_h - 1;
-	return (draw_end);
+	y = 0;
+	while (y < (data->win_h / 2))
+	{
+		x = 0;
+		while (x < data->win_w)
+		{
+			ft_mlx_pixel_put(&data->img, x, y,
+				data->map.ceiling_rgb);
+			ft_mlx_pixel_put(&data->img, x, y + (data->win_h / 2),
+				data->map.floor_rgb);
+			x++;
+		}
+		y++;
+	}
 }
 
 void	get_material(t_data *data, t_ray *ray, int start, int line_height)
