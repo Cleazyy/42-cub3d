@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 12:30:04 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/22 20:00:50 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/22 20:20:10 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@
 # define WIN_W 1280
 # define WIN_H 720
 # define MAT_PX 64
+# define FOV 0.66
 # define MOVE_SPEED 0.05
 # define ROT_SPEED 0.07
 

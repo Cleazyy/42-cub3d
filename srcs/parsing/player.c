@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 14:42:58 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/22 20:16:33 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/22 20:19:50 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,23 +65,23 @@ static void	get_player_camera_plane(t_data *data, char dir)
 {
 	if (dir == 'N')
 	{
-		data->ray.plane_x = 0.66;
+		data->ray.plane_x = data->game.fov;
 		data->ray.plane_y = 0;
 	}
 	if (dir == 'S')
 	{
-		data->ray.plane_x = -0.66;
+		data->ray.plane_x = -data->game.fov;
 		data->ray.plane_y = 0;
 	}
 	if (dir == 'W')
 	{
 		data->ray.plane_x = 0;
-		data->ray.plane_y = 0.66;
+		data->ray.plane_y = data->game.fov;
 	}
 	if (dir == 'E')
 	{
 		data->ray.plane_x = 0;
-		data->ray.plane_y = -0.66;
+		data->ray.plane_y = -data->game.fov;
 	}
 }
 
