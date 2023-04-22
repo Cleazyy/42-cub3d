@@ -6,24 +6,12 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 14:30:33 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/22 11:53:58 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/22 16:57:13 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PARSING_H
 # define PARSING_H
-
-# define MSG_WRONG_NB_ARGS "Wrong number of arguments!"
-# define MSG_OPEN_FAILED "Map file opening failed!"
-# define MSG_INVALID_MAP "Invalid map format!"
-# define MSG_INVALID_ITEMS "Map contains invalid items!"
-# define MSG_NB_SPAWN "Map does not exactly have a spawn!"
-# define MSG_MAP_NOT_CLOSED "Map is not surrounded by walls!"
-# define MSG_MAP_ALL_INFOS "Map does not contain all the information \
-or it is not in the right place!"
-# define MSG_MAP_DUP_INFO "Map contains duplicate information!"
-# define MSG_MAP_NEWLINE "Map contains a newline!"
-# define MSG_SYNTAX_ERROR "Map syntax error!"
 
 typedef struct s_data	t_data;
 

@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 12:30:04 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/22 16:50:11 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/22 17:02:36 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,11 @@
 # include "libft.h"
 # include "get_next_line.h"
 # include "game.h"
+# include "graphics.h"
+# include "language.h"
 # include "minimap.h"
 # include "parsing.h"
-# include "graphics.h"
+# include "utils.h"
 
 # define WIN_W 1280
 # define WIN_H 720
@@ -40,10 +42,6 @@
 # define KEY_ARR_L 123
 # define KEY_ARR_R 124
 # define SPRITES_SIZE 64
-
-# define MSG_ERROR "\033[1;31mError\033[0m"
-# define MSG_MALLOC_ERR "malloc() failed!"
-# define MSG_MLX_FAILED "Mlx initialization failed!"
 
 typedef enum e_dir
 {
@@ -108,15 +106,5 @@ typedef struct s_data
 	t_img		img;
 	t_img		mat[4];
 }	t_data;
-
-/* utils */
-int		is_character(char c);
-/* utils errors */
-int		print_error(char *str);
-void	exit_error(char *str);
-void	exit_free_error(t_data *data, char *str);
-/* utils free */
-void	free_array(char **array);
-void	free_everythings(t_data *data);
 
 #endif

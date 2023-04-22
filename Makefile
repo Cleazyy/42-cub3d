@@ -6,7 +6,7 @@
 #    By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/10 12:24:21 by fluchten          #+#    #+#              #
-#    Updated: 2023/04/22 16:42:36 by fluchten         ###   ########.fr        #
+#    Updated: 2023/04/22 17:02:44 by fluchten         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,6 +27,7 @@ SRCS =	bonus/minimap_init.c \
 		game/hooks.c \
 		game/moves.c \
 		game/rotate.c \
+		game/utils.c \
 		graphics/algorithm.c \
 		graphics/draw_bg.c \
 		graphics/draw_map.c \
@@ -43,7 +44,6 @@ SRCS =	bonus/minimap_init.c \
 		parsing/player.c \
 		utils/errors.c \
 		utils/free.c \
-		utils/utils.c \
 		main.c
 
 OBJS = $(addprefix ${OBJS_DIR}/, ${SRCS:%.c=%.o})
