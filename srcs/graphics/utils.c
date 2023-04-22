@@ -6,13 +6,13 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 14:44:39 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/21 17:35:50 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/22 11:34:25 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-void	draw_angle(t_data *data)
-{
-	draw_line(data, &data->ply);
-}
+// void	draw_angle(t_data *data)
+// {
+// 	draw_line(data, &data->ply);
+// }

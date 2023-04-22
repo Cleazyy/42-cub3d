@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 09:27:15 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/21 18:50:05 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/22 11:33:59 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,10 +81,10 @@ static void	jsp(t_data *data, t_ray *ray, int line_height)
 	ray->tex_pos = (ray->start - data->win_h / 2 + line_height / 2) * ray->step;
 }
 
-static void	draw(t_data *data, t_ray *ray, int x, int color)
-{
-	ft_mlx_pixel_put(&data->img, x, ray->start, color);
-}
+// static void	draw(t_data *data, t_ray *ray, int x, int color)
+// {
+// 	ft_mlx_pixel_put(&data->img, x, ray->start, color);
+// }
 
 static void	draw_column(t_data *data, t_ray *ray, int x)
 {
@@ -94,18 +94,19 @@ static void	draw_column(t_data *data, t_ray *ray, int x)
 	ray->start = get_lowest_pixel(data, &line_height);
 	ray->end = get_highest_pixel(data, &line_height);
 	jsp(data, &data->ray, line_height);
+	(void) x;
 	while (ray->start < ray->end)
 	{
 		ray->tex_y = (int) ray->tex_pos & (128 - 1);
 		ray->tex_pos += ray->step;
-		if (ray->side == 1 && ray->ray_dir_y > 0)
-			draw(data, &data->ray, x, 0xe5ff00);
-		else if (ray->side == 1 && ray->ray_dir_y < 0)
-			draw(data, &data->ray, x, 0x00fff7);
-		else if (ray->side == 0 && ray->ray_dir_x < 0)
-			draw(data, &data->ray, x, 0x7500fa);
-		else if (ray->side == 0 && ray->ray_dir_x > 0)
-			draw(data, &data->ray, x, 0x00fa19);
+		// if (ray->side == 1 && ray->ray_dir_y > 0)
+		// 	draw(data, &data->ray, x, 0xe5ff00);
+		// else if (ray->side == 1 && ray->ray_dir_y < 0)
+		// 	draw(data, &data->ray, x, 0x00fff7);
+		// else if (ray->side == 0 && ray->ray_dir_x < 0)
+		// 	draw(data, &data->ray, x, 0x7500fa);
+		// else if (ray->side == 0 && ray->ray_dir_x > 0)
+		// 	draw(data, &data->ray, x, 0x00fa19);
 		ray->start++;
 	}
 }
