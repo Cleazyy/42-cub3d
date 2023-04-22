@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/09 21:35:57 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/17 10:43:58 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/22 13:03:28 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ static char	*allocate_info(t_data *data, char *line, int start, int info)
 	int		new_line;
 	int		len;
 
-	if ((info == 1 && data->map.sprite.no_path)
-		|| (info == 2 && data->map.sprite.so_path)
-		|| (info == 3 && data->map.sprite.we_path)
-		|| (info == 4 && data->map.sprite.ea_path)
+	if ((info == 1 && data->mat[NO].path)
+		|| (info == 2 && data->mat[SO].path)
+		|| (info == 3 && data->mat[WE].path)
+		|| (info == 4 && data->mat[EA].path)
 		|| (info == 5 && data->map.floor_color)
 		|| (info == 6 && data->map.ceiling_color))
 		exit_free_error(data, MSG_MAP_DUP_INFO);
@@ -61,13 +61,13 @@ void	parse_map(t_data *data, char *line)
 	static int	is_map = 0;
 
 	if (ft_strncmp("NO ", line, 3) == 0)
-		data->map.sprite.no_path = allocate_info(data, line, 3, 1);
+		data->mat[NO].path = allocate_info(data, line, 3, 1);
 	else if (ft_strncmp("SO ", line, 3) == 0)
-		data->map.sprite.so_path = allocate_info(data, line, 3, 2);
+		data->mat[SO].path = allocate_info(data, line, 3, 2);
 	else if (ft_strncmp("WE ", line, 3) == 0)
-		data->map.sprite.we_path = allocate_info(data, line, 3, 3);
+		data->mat[WE].path = allocate_info(data, line, 3, 3);
 	else if (ft_strncmp("EA ", line, 3) == 0)
-		data->map.sprite.ea_path = allocate_info(data, line, 3, 4);
+		data->mat[EA].path = allocate_info(data, line, 3, 4);
 	else if (ft_strncmp("F ", line, 2) == 0)
 		data->map.floor_color = allocate_info(data, line, 2, 5);
 	else if (ft_strncmp("C ", line, 2) == 0)

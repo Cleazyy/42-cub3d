@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 16:00:45 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/17 09:19:09 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/22 13:05:05 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,14 +27,15 @@ void	free_array(char **array)
 
 void	free_everythings(t_data *data)
 {
-	if (data->map.sprite.no_path)
-		free(data->map.sprite.no_path);
-	if (data->map.sprite.so_path)
-		free(data->map.sprite.so_path);
-	if (data->map.sprite.we_path)
-		free(data->map.sprite.we_path);
-	if (data->map.sprite.ea_path)
-		free(data->map.sprite.ea_path);
+	int	i;
+
+	i = 0;
+	while (i < 4)
+	{
+		if (data->mat[i].path)
+			free(data->mat[i].path);
+		i++;
+	}
 	if (data->map.floor_color)
 		free(data->map.floor_color);
 	if (data->map.ceiling_color)

@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 14:29:04 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/22 11:49:34 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/22 13:11:45 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,39 @@ static int	game_loop(t_data *data)
 	return (0);
 }
 
+static int	init_game_img(t_data *data)
+{
+	data->img.ptr = mlx_new_image(data->mlx, data->win_w, data->win_h);
+	if (!data->img.ptr)
+		return (1);
+	data->img.addr = mlx_get_data_addr(data->img.ptr, &data->img.bpp,
+			&data->img.line_length, &data->img.endian);
+	if (!data->img.addr)
+		return (1);
+	return (0);
+}
+
+static int	init_game_materials(t_data *data)
+{
+	int	i;
+
+	i = 0;
+	while (i < 4)
+	{
+		data->mat[i].ptr = mlx_xpm_file_to_image(data->mlx, data->mat[i].path,
+				&data->mat[i].w, &data->mat[i].h);
+		if (!data->mat[i].ptr)
+			return (1);
+		data->mat[i].addr = mlx_get_data_addr(data->mat[i].ptr,
+				&data->mat[i].bpp, &data->mat[i].line_length,
+				&data->mat[i].endian);
+		if (!data->mat[i].addr)
+			return (1);
+		i++;
+	}
+	return (0);
+}
+
 static void	init_game_hooks(t_data *data)
 {
 	mlx_hook(data->win, 2, 0, key_pressed, data);
@@ -30,17 +63,6 @@ static void	init_game_hooks(t_data *data)
 	mlx_hook(data->win, 17, 0, close_window, data);
 	mlx_loop_hook(data->mlx, game_loop, data);
 	mlx_loop(data->mlx);
-}
-
-static int	init_game_img(t_data *data)
-{
-	data->img.ptr = mlx_new_image(data->mlx, data->win_w, data->win_h);
-	if (!data->img.ptr)
-		return (1);
-	data->img.addr = mlx_get_data_addr(data->img.ptr, &data->img.bpp, &data->img.line_length, &data->img.endian);
-	if (!data->img.addr)
-		return (1);
-	return (0);
 }
 
 int	init_game(t_data *data)
@@ -52,6 +74,8 @@ int	init_game(t_data *data)
 	if (!data->win)
 		return (1);
 	if (init_game_img(data) != 0)
+		return (1);
+	if (init_game_materials(data) != 0)
 		return (1);
 	init_game_hooks(data);
 	return (0);

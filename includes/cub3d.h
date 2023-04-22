@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 12:30:04 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/22 11:53:45 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/22 13:05:22 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,14 @@
 # define MSG_MALLOC_ERR "malloc() failed!"
 # define MSG_MLX_FAILED "Mlx initialization failed!"
 
+typedef enum e_dir
+{
+	NO = 0,
+	SO = 1,
+	WE = 2,
+	EA = 3,
+}	t_dir;
+
 typedef struct s_key
 {
 	bool	w;
@@ -61,15 +69,10 @@ typedef struct s_img
 	int		bpp;
 	int		line_length;
 	int		endian;
+	char	*path;
+	int		w;
+	int		h;
 }	t_img;
-
-typedef struct s_sprite
-{
-	char	*no_path;
-	char	*so_path;
-	char	*we_path;
-	char	*ea_path;
-}	t_sprite;
 
 typedef struct s_ply
 {
@@ -88,7 +91,6 @@ typedef struct s_map
 	char		*ceiling_color;
 	int			floor_rgb;
 	int			ceiling_rgb;
-	t_sprite	sprite;
 }	t_map;
 
 typedef struct s_data
@@ -102,6 +104,7 @@ typedef struct s_data
 	t_ply		ply;
 	t_ray		ray;
 	t_img		img;
+	t_img		mat[4];
 }	t_data;
 
 /* game */

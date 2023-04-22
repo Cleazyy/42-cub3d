@@ -6,21 +6,11 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 08:47:55 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/13 08:52:36 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/22 12:55:37 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
-
-void	initialize_key_table(t_data *data)
-{
-	data->key.w = false;
-	data->key.a = false;
-	data->key.s = false;
-	data->key.d = false;
-	data->key.arr_l = false;
-	data->key.arr_r = false;
-}
 
 static void	update_pos(t_data *data)
 {

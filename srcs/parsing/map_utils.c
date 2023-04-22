@@ -6,34 +6,24 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 08:44:46 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/17 09:19:05 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/22 13:01:34 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-void	initialize_map_table(t_data *data)
-{
-	data->map.str = NULL;
-	data->map.array = NULL;
-	data->map.sprite.no_path = NULL;
-	data->map.sprite.so_path = NULL;
-	data->map.sprite.we_path = NULL;
-	data->map.sprite.ea_path = NULL;
-	data->map.floor_color = NULL;
-	data->map.ceiling_color = NULL;
-	data->map.floor_rgb = 0;
-	data->map.ceiling_rgb = 0;
-}
-
 int	map_contains_all_infos(t_data *data)
 {
-	if (!data->map.sprite.no_path
-		|| !data->map.sprite.so_path
-		|| !data->map.sprite.we_path
-		|| !data->map.sprite.ea_path
-		|| !data->map.floor_color
-		|| !data->map.ceiling_color)
+	int	i;
+
+	i = 0;
+	while (i < 4)
+	{
+		if (!data->mat[i].path)
+			return (1);
+		i++;
+	}
+	if (!data->map.floor_color || !data->map.ceiling_color)	
 		return (1);
 	return (0);
 }
@@ -42,10 +32,10 @@ void	print_map_infos(t_data *data)
 {
 	int	i;
 
-	printf("no_path = [%s]\n", data->map.sprite.no_path);
-	printf("so_path = [%s]\n", data->map.sprite.so_path);
-	printf("we_path = [%s]\n", data->map.sprite.we_path);
-	printf("ea_path = [%s]\n", data->map.sprite.ea_path);
+	printf("no_path = [%s]\n", data->mat[NO].path);
+	printf("so_path = [%s]\n", data->mat[SO].path);
+	printf("we_path = [%s]\n", data->mat[WE].path);
+	printf("ea_path = [%s]\n", data->mat[EA].path);
 	printf("floor_color = [%s]\n", data->map.floor_color);
 	printf("ceiling_color = [%s]\n", data->map.ceiling_color);
 	printf("floor_rgb = [%d]\n", data->map.floor_rgb);
