@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 12:30:04 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/22 13:15:16 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/22 15:51:11 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@
 # define KEY_CLOSE 53
 # define KEY_ARR_L 123
 # define KEY_ARR_R 124
-# define OFFSET 64
+# define SPRITES_SIZE 64
 
 # define MSG_ERROR "\033[1;31mError\033[0m"
 # define MSG_MALLOC_ERR "malloc() failed!"
@@ -59,6 +59,8 @@ int		close_window(t_data *data);
 int		key_pressed(int key, t_data *data);
 int		key_release(int key, t_data *data);
 void	key_loop(t_data *data);
+void	update_pos(t_data *data, t_ply *ply, t_ray *ray, char **map, double speed);
+void	update_angle(t_data *data, t_ray *ray, double speed);
 /* utils */
 int		is_character(char c);
 /* utils errors */

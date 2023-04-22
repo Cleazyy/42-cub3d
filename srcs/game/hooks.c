@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/19 16:11:19 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/13 08:48:22 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/22 15:38:24 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,4 +54,10 @@ int	key_release(int key, t_data *data)
 	if (key == KEY_ARR_R)
 		data->key.arr_r = false;
 	return (0);
+}
+
+void	key_loop(t_data *data)
+{
+	update_pos(data, &data->ply, &data->ray, data->map.array, data->game.move_speed);
+	update_angle(data, &data->ray, data->game.rot_speed);
 }

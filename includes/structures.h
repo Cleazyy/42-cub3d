@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   structures.c                                       :+:      :+:    :+:   */
+/*   structures.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 13:14:29 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/22 13:14:58 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/22 14:32:46 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,12 +54,21 @@ typedef struct s_map
 	int			ceiling_rgb;
 }	t_map;
 
+typedef struct s_game
+{
+	int		w;
+	int		h;
+	double	move_speed;
+	double	rot_speed;
+}	t_game;
+
 typedef struct s_data
 {
 	void		*mlx;
 	void		*win;
 	int			win_w;
 	int			win_h;
+	t_game		game;
 	t_key		key;
 	t_map		map;
 	t_ply		ply;

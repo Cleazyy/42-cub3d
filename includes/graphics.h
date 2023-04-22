@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 07:25:30 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/22 13:18:39 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/22 16:34:06 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,10 @@ typedef struct s_ray
 }	t_ray;
 
 /* raycasting */
-void	update_player_ray(t_data *data, t_ray *ray, int x);
-void	raycasting(t_data *data);
+int		get_color(t_data *data, int x, int y, int i);
+void	draw_map(t_data *data, t_ray *ray, int x);
+void	update_player_infos(t_data *data, t_ray *ray, int x);
+void	init_raycasting(t_data *data);
 /* draw_bg */
 void	draw_background(t_data *data);
 /* draw_line */

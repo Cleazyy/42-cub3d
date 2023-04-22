@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 10:42:17 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/22 13:10:54 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/22 15:45:44 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,10 @@ void	parsing_tables_initialization(t_data *data)
 {
 	data->win_w = WIN_W;
 	data->win_h = WIN_H;
+	data->game.w = WIN_W;
+	data->game.h = WIN_H;
+	data->game.move_speed = 0.09;
+	data->game.rot_speed = 0.09;
 	initialize_map_table(data);
 	initialize_player_table(data);
 	initialize_key_table(data);

@@ -6,14 +6,14 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 12:13:29 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/22 13:18:39 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/22 16:34:06 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
 static void	update_delta_dist(t_ray *ray)
-{
+{	
 	if (ray->ray_dir_x == 0)
 		ray->delta_dist_x = 1e30;
 	else
@@ -67,12 +67,12 @@ static void	dda_algorithm(t_data *data, t_ray *ray)
 			ray->map_y += ray->step_y;
 			ray->side = 1;
 		}
-		if (data->map.array[ray->map_y][ray->map_y] == '1')
+		if (data->map.array[ray->map_y][ray->map_x] == '1')
 			hit = 1;
 	}
 }
 
-void	update_player_ray(t_data *data, t_ray *ray, int x)
+void	update_player_infos(t_data *data, t_ray *ray, int x)
 {
 	ray->cam_x = 2 * x / (double) data->win_w - 1;
 	ray->ray_dir_x = ray->dir_x + ray->plane_x * ray->cam_x;
@@ -83,7 +83,7 @@ void	update_player_ray(t_data *data, t_ray *ray, int x)
 	update_steps(ray, &data->ply);
 	dda_algorithm(data, ray);
 	if (ray->side == 0)
-		ray->perpwalldist = (ray->side_dist_y - ray->delta_dist_x);
+		ray->perpwalldist = (ray->side_dist_x - ray->delta_dist_x);
 	else
 		ray->perpwalldist = (ray->side_dist_y - ray->delta_dist_y);
 }
