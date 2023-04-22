@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 12:30:04 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/22 17:13:28 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/22 17:25:34 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,31 +37,13 @@
 # define ROT_SPEED 0.09
 # define SPRITES_SIZE 64
 
-# define KEY_UP 13
-# define KEY_DOWN 1
-# define KEY_LEFT 0
-# define KEY_RIGHT 2 
-# define KEY_CLOSE 53
-# define KEY_ARR_L 123
-# define KEY_ARR_R 124
-
-typedef enum e_dir
-{
-	NO = 0,
-	SO = 1,
-	WE = 2,
-	EA = 3,
-}	t_dir;
-
-typedef struct s_key
-{
-	bool	w;
-	bool	a;
-	bool	s;
-	bool	d;
-	bool	arr_l;
-	bool	arr_r;
-}	t_key;
+# define KEY_W 13
+# define KEY_A 0
+# define KEY_S 1
+# define KEY_D 2 
+# define KEY_ESC 53
+# define KEY_L 123
+# define KEY_R 124
 
 typedef struct s_img
 {
@@ -91,12 +73,12 @@ typedef struct s_data
 	void		*win;
 	int			win_w;
 	int			win_h;
+	bool		key[6];
 	t_game		game;
-	t_key		key;
 	t_map		map;
-	t_ray		ray;
 	t_img		img;
 	t_img		mat[4];
+	t_ray		ray;
 }	t_data;
 
 #endif

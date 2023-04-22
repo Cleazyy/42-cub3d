@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 15:27:53 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/22 15:38:04 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/22 17:23:30 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ static void	rotate_angle(t_ray *ray, double speed)
 
 void	update_angle(t_data *data, t_ray *ray, double speed)
 {
-	if (data->key.arr_l == true)
+	if (data->key[L] == true)
 		rotate_angle(ray, -speed);
-	if (data->key.arr_r == true)
+	if (data->key[R] == true)
 		rotate_angle(ray, speed);
 }

@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 10:42:17 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/22 17:08:01 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/22 17:23:33 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,14 @@ static void	initialize_player_table(t_data *data)
 
 static void	initialize_key_table(t_data *data)
 {
-	data->key.w = false;
-	data->key.a = false;
-	data->key.s = false;
-	data->key.d = false;
-	data->key.arr_l = false;
-	data->key.arr_r = false;
+	int	i;
+
+	i = 0;
+	while (i < 6)
+	{
+		data->key[i] = false;
+		i++;
+	}
 }
 
 void	parsing_tables_initialization(t_data *data)

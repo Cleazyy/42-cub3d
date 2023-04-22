@@ -6,12 +6,30 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 16:58:35 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/22 17:00:59 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/22 17:24:27 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef UTILS_H
 # define UTILS_H
+
+typedef enum e_dir
+{
+	NO = 0,
+	SO = 1,
+	WE = 2,
+	EA = 3,
+}	t_dir;
+
+typedef enum s_key
+{
+	W = 0,
+	A = 1,
+	S = 2,
+	D = 3,
+	L = 4,
+	R = 5,
+}	t_key;
 
 /* errors */
 int		print_error(char *str);

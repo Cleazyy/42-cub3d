@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 15:27:55 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/22 17:10:56 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/22 17:23:14 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,12 +46,12 @@ static void	move_right(t_ray *ray, char **map, double speed)
 
 void	update_pos(t_data *data, t_ray *ray, char **map, double speed)
 {
-	if (data->key.w == true)
+	if (data->key[W] == true)
 		move_up(ray, map, speed);
-	if (data->key.a == true)
+	if (data->key[A] == true)
 		move_left(ray, map, speed);
-	if (data->key.s == true)
+	if (data->key[S] == true)
 		move_down(ray, map, speed);
-	if (data->key.d == true)
+	if (data->key[D] == true)
 		move_right(ray, map, speed);
 }
