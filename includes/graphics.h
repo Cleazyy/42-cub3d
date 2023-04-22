@@ -6,15 +6,15 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 07:25:30 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/22 16:44:41 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/22 16:52:33 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GRAPHICS_H
 # define GRAPHICS_H
 
-typedef struct s_img	t_img;
 typedef struct s_data	t_data;
+typedef struct s_img	t_img;
 
 typedef struct s_ray
 {
@@ -51,6 +51,7 @@ void	draw_background(t_data *data);
 /* draw_map */
 void	draw_map(t_data *data, t_ray *ray, int x);
 /* raycasting */
+void	initialize_ray_table(t_ray *ray);
 void	init_raycasting(t_data *data);
 /* utils */
 void	ft_mlx_pixel_put(t_img *img, int x, int y, int color);

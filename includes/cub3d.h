@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 12:30:04 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/22 16:45:02 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/22 16:50:11 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@
 
 # include "libft.h"
 # include "get_next_line.h"
+# include "game.h"
 # include "minimap.h"
 # include "parsing.h"
 # include "graphics.h"
@@ -93,14 +94,6 @@ typedef struct s_map
 	int			ceiling_rgb;
 }	t_map;
 
-typedef struct s_game
-{
-	int		w;
-	int		h;
-	double	move_speed;
-	double	rot_speed;
-}	t_game;
-
 typedef struct s_data
 {
 	void		*mlx;
@@ -116,14 +109,6 @@ typedef struct s_data
 	t_img		mat[4];
 }	t_data;
 
-/* game */
-int		init_game(t_data *data);
-int		close_window(t_data *data);
-int		key_pressed(int key, t_data *data);
-int		key_release(int key, t_data *data);
-void	key_loop(t_data *data);
-void	update_pos(t_data *data, t_ply *ply, t_ray *ray, char **map, double speed);
-void	update_angle(t_data *data, t_ray *ray, double speed);
 /* utils */
 int		is_character(char c);
 /* utils errors */
