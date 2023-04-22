@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 07:25:30 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/21 18:13:34 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/22 13:18:39 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,16 +45,15 @@ typedef struct s_ray
 	double	tex_pos;
 }	t_ray;
 
-/* algorithm */
-void	update_ray_values(t_data *data, t_ray *ray, int x);
+/* raycasting */
+void	update_player_ray(t_data *data, t_ray *ray, int x);
+void	raycasting(t_data *data);
 /* draw_bg */
 void	draw_background(t_data *data);
 /* draw_line */
 void	draw_line(t_data *data, t_ply *player);
 /* draw_pixel */
 void	ft_mlx_pixel_put(t_img *img, int x, int y, int color);
-/* raycasting */
-void	raycasting(t_data *data);
 /* utils */
 void	draw_angle(t_data *data);
 

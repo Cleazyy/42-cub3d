@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 14:29:04 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/22 13:11:45 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/22 13:48:32 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static int	game_loop(t_data *data)
 {
 	key_loop(data);
 	draw_background(data);
-	raycasting(data);
+	// raycasting(data);
 	// draw_angle(data);
 	// init_minimap(data);
 	mlx_put_image_to_window(data->mlx, data->win, data->img.ptr, 0, 0);

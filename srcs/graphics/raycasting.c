@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 09:27:15 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/22 11:57:30 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/22 13:40:32 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,10 +53,19 @@ static void	jsp(t_data *data, t_ray *ray, int line_height)
 	ray->tex_pos = (ray->start - data->win_h / 2 + line_height / 2) * ray->step;
 }
 
-// static void	draw(t_data *data, t_ray *ray, int x, int color)
-// {
-// 	ft_mlx_pixel_put(&data->img, x, ray->start, color);
-// }
+static int	get_color(t_data *data, int x, int y, int dir)
+{
+	return (*(int *)(data->mat[dir].addr + (y * data->mat[dir].line_length + x * (data->mat[dir].bpp / 8))));
+}
+
+static void	draw(t_data *data, int x, int dir)
+{
+	int	color;
+
+	printf("DIR = %d\n", dir);
+	color = get_color(data, data->ray.tex_x, data->ray.tex_y, dir);
+	ft_mlx_pixel_put(&data->img, x, data->ray.start, color);
+}
 
 static void	draw_column(t_data *data, t_ray *ray, int x)
 {
@@ -71,14 +80,14 @@ static void	draw_column(t_data *data, t_ray *ray, int x)
 	{
 		ray->tex_y = (int) ray->tex_pos & (128 - 1);
 		ray->tex_pos += ray->step;
-		// if (ray->side == 1 && ray->ray_dir_y > 0)
-		// 	draw(data, &data->ray, x, 0xe5ff00);
-		// else if (ray->side == 1 && ray->ray_dir_y < 0)
-		// 	draw(data, &data->ray, x, 0x00fff7);
+		if (ray->side == 1 && ray->ray_dir_y > 0)
+			draw(data, x, NO);
+		else if (ray->side == 1 && ray->ray_dir_y < 0)
+			draw(data, x, SO);
 		// else if (ray->side == 0 && ray->ray_dir_x < 0)
-		// 	draw(data, &data->ray, x, 0x7500fa);
+		// 	draw(data, x, WE);
 		// else if (ray->side == 0 && ray->ray_dir_x > 0)
-		// 	draw(data, &data->ray, x, 0x00fa19);
+		// 	draw(data, x, EA);
 		ray->start++;
 	}
 }
@@ -91,7 +100,7 @@ void	raycasting(t_data *data)
 	x = 0;
 	while (x < data->win_w)
 	{
-		update_ray_values(data, &data->ray, x);
+		update_player_ray(data, &data->ray, x);
 		draw_column(data, &data->ray, x);
 		x++;
 	}

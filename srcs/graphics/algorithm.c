@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 12:13:29 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/22 12:08:25 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/22 13:18:39 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ static void	dda_algorithm(t_data *data, t_ray *ray)
 	}
 }
 
-void	update_ray_values(t_data *data, t_ray *ray, int x)
+void	update_player_ray(t_data *data, t_ray *ray, int x)
 {
 	ray->cam_x = 2 * x / (double) data->win_w - 1;
 	ray->ray_dir_x = ray->dir_x + ray->plane_x * ray->cam_x;
