@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 10:42:17 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/22 11:58:58 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/22 12:04:37 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,13 @@ static void	initialize_map_table(t_data *data)
 	data->map.ceiling_color = NULL;
 	data->map.floor_rgb = 0;
 	data->map.ceiling_rgb = 0;
+}
+
+static void	initialize_player_table(t_data *data)
+{
+	data->ply.x = 0;
+	data->ply.y = 0;
+	data->ply.angle = 0;
 }
 
 static void	initialize_key_table(t_data *data)
@@ -69,6 +76,7 @@ void	parsing_tables_initialization(t_data *data)
 	data->win_w = WIN_W;
 	data->win_h = WIN_H;
 	initialize_map_table(data);
+	initialize_player_table(data);
 	initialize_key_table(data);
 	initialize_ray_table(&data->ray);
 }
