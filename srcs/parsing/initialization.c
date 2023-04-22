@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 10:42:17 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/22 20:36:01 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/22 20:47:12 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 static void	initialize_game_table(t_data *data)
 {
-	data->game.w = WIN_W;
-	data->game.h = WIN_H;
 	data->game.mat_px = MAT_PX;
 	data->game.fov = FOV;
 	data->game.move_speed = MOVE_SPEED;
