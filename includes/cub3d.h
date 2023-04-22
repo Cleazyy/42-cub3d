@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 12:30:04 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/22 17:02:36 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/22 17:04:35 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,9 @@
 
 # define WIN_W 1280
 # define WIN_H 720
+# define MOVE_SPEED 0.09
+# define ROT_SPEED 0.09
+# define SPRITES_SIZE 64
 
 # define KEY_UP 13
 # define KEY_DOWN 1
@@ -41,7 +44,6 @@
 # define KEY_CLOSE 53
 # define KEY_ARR_L 123
 # define KEY_ARR_R 124
-# define SPRITES_SIZE 64
 
 typedef enum e_dir
 {
