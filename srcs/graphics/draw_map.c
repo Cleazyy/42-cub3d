@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 16:20:26 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/22 16:42:22 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/22 17:08:48 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 static void	get_material(t_data *data, t_ray *ray, int start, int line_height)
 {
 	if (ray->side == 0)
-		ray->wall_x = data->ply.y + ray->perpwalldist * ray->ray_dir_y;
+		ray->wall_x = data->ray.y + ray->perpwalldist * ray->ray_dir_y;
 	else
-		ray->wall_x = data->ply.x + ray->perpwalldist * ray->ray_dir_x;
+		ray->wall_x = data->ray.x + ray->perpwalldist * ray->ray_dir_x;
 	ray->wall_x -= floor(ray->wall_x);
 	ray->tex_x = ray->wall_x * 64;
 	if (ray->side == 0 && ray->ray_dir_x > 0)

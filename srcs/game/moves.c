@@ -6,52 +6,52 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 15:27:55 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/22 16:37:49 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/22 17:10:56 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-static void	move_up(t_ply *ply, t_ray *ray, char **map, double speed)
+static void	move_up(t_ray *ray, char **map, double speed)
 {
-	if (map[(int)ply->y][(int)(ply->x + ray->dir_x * speed)] != '1')
-		ply->x += ray->dir_x * speed;
-	if (map[(int)(ply->y + ray->dir_y * speed)][(int)ply->x] != '1')
-		ply->y += ray->dir_y * speed;
+	if (map[(int)ray->y][(int)(ray->x + ray->dir_x * speed)] != '1')
+		ray->x += ray->dir_x * speed;
+	if (map[(int)(ray->y + ray->dir_y * speed)][(int)ray->x] != '1')
+		ray->y += ray->dir_y * speed;
 }
 
-static void	move_left(t_ply *ply, t_ray *ray, char **map, double speed)
+static void	move_left(t_ray *ray, char **map, double speed)
 {
-	if (map[(int)ply->y][(int)(ply->x - ray->plane_x * speed)] != '1')
-		ply->x -= ray->plane_x * speed;
-	if (map[(int)(ply->y - ray->plane_y * speed)][(int)ply->x] != '1')
-		ply->y -= ray->plane_y * speed;
+	if (map[(int)ray->y][(int)(ray->x - ray->plane_x * speed)] != '1')
+		ray->x -= ray->plane_x * speed;
+	if (map[(int)(ray->y - ray->plane_y * speed)][(int)ray->x] != '1')
+		ray->y -= ray->plane_y * speed;
 }
 
-static void	move_down(t_ply *ply, t_ray *ray, char **map, double speed)
+static void	move_down(t_ray *ray, char **map, double speed)
 {
-	if (map[(int)ply->y][(int)(ply->x - ray->dir_x * speed)] != '1')
-		ply->x -= ray->dir_x * speed;
-	if (map[(int)(ply->y - ray->dir_y * speed)][(int)ply->x] != '1')
-		ply->y -= ray->dir_y * speed;
+	if (map[(int)ray->y][(int)(ray->x - ray->dir_x * speed)] != '1')
+		ray->x -= ray->dir_x * speed;
+	if (map[(int)(ray->y - ray->dir_y * speed)][(int)ray->x] != '1')
+		ray->y -= ray->dir_y * speed;
 }
 
-static void	move_right(t_ply *ply, t_ray *ray, char **map, double speed)
+static void	move_right(t_ray *ray, char **map, double speed)
 {
-	if (map[(int)ply->y][(int)(ply->x + ray->plane_x * speed)] != '1')
-		ply->x += ray->plane_x * speed;
-	if (map[(int)(ply->y + ray->plane_y * speed)][(int)ply->x] != '1')
-		ply->y += ray->plane_y * speed;
+	if (map[(int)ray->y][(int)(ray->x + ray->plane_x * speed)] != '1')
+		ray->x += ray->plane_x * speed;
+	if (map[(int)(ray->y + ray->plane_y * speed)][(int)ray->x] != '1')
+		ray->y += ray->plane_y * speed;
 }
 
-void	update_pos(t_data *data, t_ply *ply, t_ray *ray, char **map, double speed)
+void	update_pos(t_data *data, t_ray *ray, char **map, double speed)
 {
 	if (data->key.w == true)
-		move_up(ply, ray, map, speed);
+		move_up(ray, map, speed);
 	if (data->key.a == true)
-		move_left(ply, ray, map, speed);
+		move_left(ray, map, speed);
 	if (data->key.s == true)
-		move_down(ply, ray, map, speed);
+		move_down(ray, map, speed);
 	if (data->key.d == true)
-		move_right(ply, ray, map, speed);
+		move_right(ray, map, speed);
 }

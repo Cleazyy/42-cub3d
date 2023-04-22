@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 07:25:30 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/22 17:01:03 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/22 17:11:22 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int		close_window(t_data *data);
 int		key_pressed(int key, t_data *data);
 int		key_release(int key, t_data *data);
 /* moves */
-void	update_pos(t_data *data, t_ply *ply, t_ray *ray, char **map, double speed);
+void	update_pos(t_data *data, t_ray *ray, char **map, double speed);
 /* rotate */
 void	update_angle(t_data *data, t_ray *ray, double speed);
 /* utils */

@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/09 15:30:46 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/22 15:54:48 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/22 17:08:40 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,9 +74,9 @@ void	draw_minimap_map(t_data *data, t_minimap *mini)
 		x = 0;
 		while (data->map.array[y][x])
 		{
-			pos_x = ((mini->w / mini->scale) - (data->ply.x - x))
+			pos_x = ((mini->w / mini->scale) - (data->ray.x - x))
 				* mini->rect + mini->x;
-			pos_y = ((mini->h / mini->scale) - (data->ply.y - y))
+			pos_y = ((mini->h / mini->scale) - (data->ray.y - y))
 				* mini->rect + mini->y;
 			if (data->map.array[y][x] == '1')
 				draw_minimap_rect(mini, pos_x, pos_y, mini->clr_wall);

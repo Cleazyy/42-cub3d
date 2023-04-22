@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 12:13:29 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/22 16:34:06 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/22 17:12:23 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,27 +24,27 @@ static void	update_delta_dist(t_ray *ray)
 		ray->delta_dist_y = fabs(1 / ray->ray_dir_y);
 }
 
-static void	update_steps(t_ray *ray, t_ply *ply)
+static void	update_steps(t_ray *ray)
 {
 	if (ray->ray_dir_x < 0)
 	{
 		ray->step_x = -1;
-		ray->side_dist_x = (ply->x - ray->map_x) * ray->delta_dist_x;
+		ray->side_dist_x = (ray->x - ray->map_x) * ray->delta_dist_x;
 	}
 	else
 	{
 		ray->step_x = 1;
-		ray->side_dist_x = (ray->map_x + 1.0 - ply->x) * ray->delta_dist_x;
+		ray->side_dist_x = (ray->map_x + 1.0 - ray->x) * ray->delta_dist_x;
 	}
 	if (ray->ray_dir_y < 0)
 	{
 		ray->step_y = -1;
-		ray->side_dist_y = (ply->y - ray->map_y) * ray->delta_dist_y;
+		ray->side_dist_y = (ray->y - ray->map_y) * ray->delta_dist_y;
 	}
 	else
 	{
 		ray->step_y = 1;
-		ray->side_dist_y = (ray->map_y + 1.0 - ply->y) * ray->delta_dist_y;
+		ray->side_dist_y = (ray->map_y + 1.0 - ray->y) * ray->delta_dist_y;
 	}
 }
 
@@ -77,10 +77,10 @@ void	update_player_infos(t_data *data, t_ray *ray, int x)
 	ray->cam_x = 2 * x / (double) data->win_w - 1;
 	ray->ray_dir_x = ray->dir_x + ray->plane_x * ray->cam_x;
 	ray->ray_dir_y = ray->dir_y + ray->plane_y * ray->cam_x;
-	ray->map_x = (int) data->ply.x;
-	ray->map_y = (int) data->ply.y;
+	ray->map_x = (int) data->ray.x;
+	ray->map_y = (int) data->ray.y;
 	update_delta_dist(ray);
-	update_steps(ray, &data->ply);
+	update_steps(ray);
 	dda_algorithm(data, ray);
 	if (ray->side == 0)
 		ray->perpwalldist = (ray->side_dist_x - ray->delta_dist_x);

@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 08:44:46 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/22 16:38:19 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/22 17:08:54 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ void	print_map_infos(t_data *data)
 	i = -1;
 	while (data->map.array[++i])
 		printf("map.array[%d] = [%s]\n", i, data->map.array[i]);
-	printf("ply.x = %f\n", data->ply.x);
-	printf("ply.y = %f\n", data->ply.y);
-	printf("ply.angle = %f\n", data->ply.angle);
+	printf("ply.x = %f\n", data->ray.x);
+	printf("ply.y = %f\n", data->ray.y);
 }

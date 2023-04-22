@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 14:42:58 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/22 12:07:59 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/22 17:08:59 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ static char	get_player_spawn_pos(t_data *data)
 			if (is_character(data->map.array[y][x]))
 			{
 				point = data->map.array[y][x];
-				data->ply.x = (double) x;
-				data->ply.y = (double) y;
+				data->ray.x = (double) x;
+				data->ray.y = (double) y;
 			}
 			x++;
 		}
@@ -41,25 +41,21 @@ static void	get_player_spawn_angle(t_data *data, char point)
 {
 	if (point == 'N')
 	{
-		data->ply.angle = M_PI / 2;
 		data->ray.dir_x = 0;
 		data->ray.dir_y = -1;
 	}
 	else if (point == 'S')
 	{
-		data->ply.angle = (3 * M_PI) / 2;
 		data->ray.dir_x = 0;
 		data->ray.dir_y = 1;
 	}
 	else if (point == 'W')
 	{
-		data->ply.angle = M_PI;
 		data->ray.dir_x = -1;
 		data->ray.dir_y = 0;
 	}
 	else if (point == 'E')
 	{
-		data->ply.angle = 0;
 		data->ray.dir_x = 1;
 		data->ray.dir_y = 0;
 	}

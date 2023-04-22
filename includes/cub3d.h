@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 12:30:04 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/22 17:04:35 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/22 17:13:28 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,15 +75,6 @@ typedef struct s_img
 	int		h;
 }	t_img;
 
-typedef struct s_ply
-{
-	double	x;
-	double	y;
-	double	dx;
-	double	dy;
-	double	angle;
-}	t_ply;
-
 typedef struct s_map
 {
 	char		*str;
@@ -103,7 +94,6 @@ typedef struct s_data
 	t_game		game;
 	t_key		key;
 	t_map		map;
-	t_ply		ply;
 	t_ray		ray;
 	t_img		img;
 	t_img		mat[4];

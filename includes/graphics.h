@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 07:25:30 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/22 16:52:33 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/22 17:07:30 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ typedef struct s_img	t_img;
 
 typedef struct s_ray
 {
+	double	x;
+	double	y;
 	double	dir_x;
 	double	dir_y;
 	double	plane_x;

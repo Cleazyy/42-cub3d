@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 10:42:17 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/22 16:47:59 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/22 17:08:01 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,8 @@ static void	initialize_map_table(t_data *data)
 
 static void	initialize_player_table(t_data *data)
 {
-	data->ply.x = 0;
-	data->ply.y = 0;
-	data->ply.angle = 0;
+	data->ray.x = 0;
+	data->ray.y = 0;
 }
 
 static void	initialize_key_table(t_data *data)

@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 15:59:31 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/22 16:38:51 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/22 17:13:02 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,5 +47,6 @@ int	get_highest_pixel(t_data *data, int line_height)
 
 int	get_color(t_data *data, int x, int y, int i)
 {
-	return (*(int *)(data->mat[i].addr + (y * data->mat[i].line_length + x * (data->mat[i].bpp / 8))));
+	return (*(int *)(data->mat[i].addr + (y * data->mat[i].line_length + x
+			*(data->mat[i].bpp / 8))));
 }
