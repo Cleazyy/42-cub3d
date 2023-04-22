@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 12:30:04 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/22 17:33:48 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/22 20:00:50 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,7 @@ typedef struct s_map
 	char		*ceiling_color;
 	int			floor_rgb;
 	int			ceiling_rgb;
+	char		dir;
 }	t_map;
 
 typedef struct s_data

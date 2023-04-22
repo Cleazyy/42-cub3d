@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 10:42:17 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/22 17:31:04 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/22 20:01:31 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ static void	initialize_map_table(t_data *data)
 	data->map.ceiling_color = NULL;
 	data->map.floor_rgb = 0;
 	data->map.ceiling_rgb = 0;
+	data->map.dir = 0;
 }
 
 static void	initialize_player_table(t_data *data)
