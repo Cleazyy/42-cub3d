@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 09:27:15 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/23 17:00:21 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/23 17:16:24 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,8 @@ void	initialize_ray_table(t_ray *ray)
 	ray->start = 0;
 	ray->end = 0;
 	ray->wall_x = 0;
-	ray->tex_x = 0;
-	ray->tex_y = 0;
+	ray->mat_x = 0;
+	ray->mat_y = 0;
 	ray->step = 0;
 	ray->tex_pos = 0;
 }

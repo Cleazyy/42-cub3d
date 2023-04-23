@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 07:25:30 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/23 17:00:21 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/23 17:16:24 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,8 @@ typedef struct s_ray
 	int		start;
 	int		end;
 	double	wall_x;
-	int		tex_x;
-	int		tex_y;
+	int		mat_x;
+	int		mat_y;
 	double	step;
 	double	tex_pos;
 }	t_ray;
