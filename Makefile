@@ -6,7 +6,7 @@
 #    By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/10 12:24:21 by fluchten          #+#    #+#              #
-#    Updated: 2023/04/22 17:02:44 by fluchten         ###   ########.fr        #
+#    Updated: 2023/04/23 10:10:24 by fluchten         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,9 +21,7 @@ INC_DIR = includes
 SRCS_DIR = srcs
 OBJS_DIR = objs
 
-SRCS =	bonus/minimap_init.c \
-		bonus/minimap_utils.c \
-		game/game.c \
+SRCS =	game/game.c \
 		game/hooks.c \
 		game/moves.c \
 		game/rotate.c \
@@ -33,6 +31,8 @@ SRCS =	bonus/minimap_init.c \
 		graphics/draw_map.c \
 		graphics/raycasting.c \
 		graphics/utils.c \
+		minimap/drawing.c \
+		minimap/minimap.c \
 		parsing/args.c \
 		parsing/colors.c \
 		parsing/initialization.c \
