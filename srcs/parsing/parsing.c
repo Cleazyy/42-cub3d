@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 14:49:12 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/23 16:08:28 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/23 17:25:41 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,16 +22,19 @@ static char	*skip_file_spaces(t_data *data, char *line)
 	temp = ft_strtrim(line, " ");
 	if (!temp)
 		exit_free_error(data, MSG_MALLOC_ERR);
-	if ((temp[0] == 'N' && temp[1] == 'O')
-		|| (temp[0] == 'S' && temp[1] == 'O')
-		|| (temp[0] == 'W' && temp[1] == 'E')
-		|| (temp[0] == 'E' && temp[1] == 'A')
-		|| (temp[0] == 'F')
-		|| (temp[0] == 'C'))
+	if ((ft_strncmp("NO ", temp, 3) == 0)
+		|| (ft_strncmp("SO ", temp, 3) == 0)
+		|| (ft_strncmp("WE ", temp, 3) == 0)
+		|| (ft_strncmp("EA ", temp, 3) == 0)
+		|| (ft_strncmp("F ", temp, 2) == 0)
+		|| (ft_strncmp("C ", temp, 2) == 0))
 		return (temp);
 	else
 	{
+		free(temp);
 		final = ft_strdup(line);
+		if (!final)
+			exit_free_error(data, MSG_MALLOC_ERR);
 		return (final);
 	}
 }
