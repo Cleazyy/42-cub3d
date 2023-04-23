@@ -1,17 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minimap_utils.c                                    :+:      :+:    :+:   */
+/*   drawing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/09 15:30:46 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/22 19:58:06 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/23 16:28:59 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
+/* draw_minimap_rect draws a square at the positions passed in parameters,
+checking not to exceed the limits of the minimap */
 void	draw_minimap_rect(t_minimap *mini, double px, double py, int color)
 {
 	int	y;
@@ -32,6 +34,7 @@ void	draw_minimap_rect(t_minimap *mini, double px, double py, int color)
 	}
 }
 
+/* draw_minimap_background draws the minimap and its outline */
 void	draw_minimap_background(t_data *data, t_minimap *mini)
 {
 	int	y;
@@ -59,6 +62,8 @@ void	draw_minimap_background(t_data *data, t_minimap *mini)
 	}
 }
 
+/* draw_minimap_map draws a square for each floor and for each wall
+depending on the position of the player */
 void	draw_minimap_map(t_ray *ray, t_minimap *mini, char **map)
 {
 	double	pos_x;
@@ -88,6 +93,7 @@ void	draw_minimap_map(t_ray *ray, t_minimap *mini, char **map)
 	}
 }
 
+/* draw_minimap_player draws the player square in the middle of the minimap */
 void	draw_minimap_player(t_minimap *mini)
 {
 	double	pos_x;

@@ -6,12 +6,14 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 14:26:19 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/23 09:54:52 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/23 16:22:05 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
+/* initialize_minimap_table initializes the variables of the minimap
+structure and check if its size is not bigger than the window */
 static void	initialize_minimap_table(t_data *data, t_minimap *mini)
 {
 	mini->data = data;
@@ -32,6 +34,7 @@ static void	initialize_minimap_table(t_data *data, t_minimap *mini)
 	mini->clr_ply = 0xff0000;
 }
 
+/* init_minimap displays the minimap in the window */
 void	init_minimap(t_data *data)
 {
 	t_minimap	mini;
