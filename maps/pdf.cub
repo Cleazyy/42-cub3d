@@ -3,8 +3,8 @@ SO ./assets/wolfenstein/greystone.xpm
 WE ./assets/wolfenstein/purplestone.xpm
 EA ./assets/wolfenstein/red.xpm
 
-F 90,108,48
-C 110,157,211
+F 112,112,112
+C 56,56,56
 
         1111111111111111111111111
         1000000000110000000000001
