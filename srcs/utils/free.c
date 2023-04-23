@@ -6,12 +6,13 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 16:00:45 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/22 20:38:40 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/23 16:18:23 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
+/* free_array frees the memory of a double entry array */
 void	free_array(char **array)
 {
 	int	i;
@@ -25,6 +26,7 @@ void	free_array(char **array)
 	free(array);
 }
 
+/* destroy_img destroys all minilibx images */
 static void	destroy_img(t_data *data)
 {
 	int	i;
@@ -40,6 +42,7 @@ static void	destroy_img(t_data *data)
 	}
 }
 
+/* free_everythings frees all allocated memory */
 void	free_everythings(t_data *data)
 {
 	int	i;
