@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/09 15:30:46 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/23 16:28:59 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/23 17:39:09 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ void	draw_minimap_rect(t_minimap *mini, double px, double py, int color)
 		x = 0;
 		while (x < mini->rect)
 		{
-			if ((px + x > mini->x) && (px + x < mini->w + mini->x)
-				&& (py + y > mini->y) && (py + y < mini->h + mini->y))
+			if ((px + x > mini->x + 1) && (px + x < mini->w + mini->x)
+				&& (py + y > mini->y + 1) && (py + y < mini->h + mini->y))
 				ft_mlx_pixel_put(&mini->data->img, px + x, py + y, color);
 			x++;
 		}	
