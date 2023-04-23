@@ -6,12 +6,14 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/09 21:35:57 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/22 13:03:28 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/23 16:04:04 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
+/* allocate_info checks that there is no duplicate information and saves
+all the data by removing the line break and the spaces before and after */
 static char	*allocate_info(t_data *data, char *line, int start, int info)
 {
 	char	*final;
@@ -40,6 +42,8 @@ static char	*allocate_info(t_data *data, char *line, int start, int info)
 	return (final);
 }
 
+/* allocate_map checks that all the information has been allocated
+and saves each line of the map in a string */
 static void	allocate_map(t_data *data, char *line)
 {
 	char	*temp;
@@ -56,6 +60,8 @@ static void	allocate_map(t_data *data, char *line)
 	free(temp);
 }
 
+/* parse_map compares each line to find the right
+information to allocate */
 void	parse_map(t_data *data, char *line)
 {
 	static int	is_map = 0;

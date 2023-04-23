@@ -6,12 +6,14 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 14:49:12 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/22 11:53:19 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/23 16:08:28 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
+/* skip_file_spaces removes the front and back spaces
+for each information in the map. */
 static char	*skip_file_spaces(t_data *data, char *line)
 {
 	char	*final;
@@ -34,6 +36,7 @@ static char	*skip_file_spaces(t_data *data, char *line)
 	}
 }
 
+/* read_file reads the map file line by line using get_next_line */
 static void	read_file(t_data *data, char *file)
 {
 	char	*line;
@@ -55,6 +58,7 @@ static void	read_file(t_data *data, char *file)
 	}
 }
 
+/* init_parsing initializes the parsing and calls the other functions */
 void	init_parsing(t_data *data, int ac, char **av)
 {
 	char	*file;

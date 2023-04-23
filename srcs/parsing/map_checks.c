@@ -6,12 +6,13 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 08:26:30 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/21 09:15:50 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/23 16:00:00 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
+/* only_valid_items checks if the map contains only valid items */
 static int	only_valid_items(char **map)
 {
 	int	y;
@@ -33,6 +34,7 @@ static int	only_valid_items(char **map)
 	return (0);
 }
 
+/* count_spawn_pos checks if there is only 1 position of player's spawn */
 static int	count_spawn_pos(char **map)
 {
 	int	count;
@@ -55,6 +57,7 @@ static int	count_spawn_pos(char **map)
 	return (count);
 }
 
+/* check_is_valid_map checksif the map is valid */
 void	check_is_valid_map(t_data *data)
 {
 	if (only_valid_items(data->map.array) != 0)

@@ -6,12 +6,13 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 14:24:57 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/10 14:28:50 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/23 15:59:36 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
+/* check_args_nb checks if the number of input args is correct */
 int	check_args_nb(int ac)
 {
 	if (ac != 2)
@@ -19,6 +20,8 @@ int	check_args_nb(int ac)
 	return (0);
 }
 
+/* check_map_name checks if the extension of the map file is .cub and
+the name has minimum length of 5 */
 int	check_map_name(char **av)
 {
 	char	*map;

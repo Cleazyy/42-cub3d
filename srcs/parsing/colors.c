@@ -6,12 +6,14 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 07:25:45 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/17 10:44:51 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/23 11:53:25 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
+/* ft_atoi_rgb is a custom version of atoi that checks if the number is
+between 0 and 255 and skips the spaces before and after the number */
 static int	ft_atoi_rgb(const char *str)
 {
 	long	res;
@@ -41,6 +43,7 @@ static int	ft_atoi_rgb(const char *str)
 	return (sign * res);
 }
 
+/* parse_colors uses bit shifting to convert 3 numbers rgb to an integer */
 int	parse_colors(t_data *data, char *color)
 {
 	char	**rgb_array;

@@ -6,12 +6,13 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 10:42:17 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/23 10:21:56 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/23 11:55:56 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
+/* initialize_game_table initializes the variables of the game structure */
 static void	initialize_game_table(t_data *data)
 {
 	data->game.mat_px = MAT_PX;
@@ -21,6 +22,7 @@ static void	initialize_game_table(t_data *data)
 	data->game.rot_speed = ROT_SPEED;
 }
 
+/* initialize_map_table initializes the variables of the map structure */
 static void	initialize_map_table(t_data *data)
 {
 	int	i;
@@ -42,12 +44,14 @@ static void	initialize_map_table(t_data *data)
 	data->map.dir = 0;
 }
 
+/* initialize_player_table initializes the position variables */
 static void	initialize_player_table(t_data *data)
 {
 	data->ray.x = 0;
 	data->ray.y = 0;
 }
 
+/* initialize_key_table initializes the variables of the keys */
 static void	initialize_key_table(t_data *data)
 {
 	int	i;
@@ -60,6 +64,7 @@ static void	initialize_key_table(t_data *data)
 	}
 }
 
+/* parsing_tables_initialization initializes all structure */
 void	parsing_tables_initialization(t_data *data)
 {
 	data->win_w = WIN_W;

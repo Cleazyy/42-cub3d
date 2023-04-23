@@ -6,12 +6,14 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 08:44:46 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/22 17:08:54 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/23 16:00:37 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
+/* map_contains_all_infos checks if the map file contains all the information,
+so the 4 textures and the color of the floor and the ceiling */
 int	map_contains_all_infos(t_data *data)
 {
 	int	i;
@@ -28,6 +30,7 @@ int	map_contains_all_infos(t_data *data)
 	return (0);
 }
 
+/* print_map_infos is a simple temporary function to check the parsing */
 void	print_map_infos(t_data *data)
 {
 	int	i;
