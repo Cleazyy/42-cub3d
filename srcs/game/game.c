@@ -6,12 +6,13 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 14:29:04 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/23 10:48:54 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/23 16:34:39 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
+/* game_loop is the main loop of the game which calls all necessary functions */
 static int	game_loop(t_data *data)
 {
 	key_loop(data);
@@ -23,6 +24,7 @@ static int	game_loop(t_data *data)
 	return (0);
 }
 
+/* init_game_img initializes the main image of the game */
 static int	init_game_img(t_data *data)
 {
 	data->img.ptr = mlx_new_image(data->mlx, data->win_w, data->win_h);
@@ -35,6 +37,7 @@ static int	init_game_img(t_data *data)
 	return (0);
 }
 
+/* init_game materials initializes the images of each texture */
 static int	init_game_materials(t_data *data)
 {
 	int	i;
@@ -56,6 +59,7 @@ static int	init_game_materials(t_data *data)
 	return (0);
 }
 
+/* init_game_hooks initializes game hooks */
 static void	init_game_hooks(t_data *data)
 {
 	mlx_hook(data->win, 2, 0, key_pressed, data);
@@ -65,6 +69,7 @@ static void	init_game_hooks(t_data *data)
 	mlx_loop(data->mlx);
 }
 
+/* init_game initializes minilibx and all its utilities */
 int	init_game(t_data *data)
 {
 	data->mlx = mlx_init();

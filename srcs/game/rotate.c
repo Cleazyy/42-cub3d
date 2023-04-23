@@ -6,12 +6,13 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 15:27:53 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/22 20:15:33 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/23 16:42:43 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
+/* rotate_angle shifts the player's view angle left or right */
 static void	rotate_angle(t_ray *ray, double speed)
 {
 	double	old_dir_x;
@@ -25,6 +26,7 @@ static void	rotate_angle(t_ray *ray, double speed)
 	ray->plane_y = old_plane_x * sin(speed) + ray->plane_y * cos(speed);
 }
 
+/* update_angle update the player's view angle according to the key pressed */
 void	update_angle(t_data *data, t_map *map, t_ray *ray, double speed)
 {
 	if (data->key[L] == true && is_north_or_south(map->dir))
