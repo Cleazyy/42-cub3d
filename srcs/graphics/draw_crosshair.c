@@ -6,12 +6,14 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 10:48:46 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/23 10:49:01 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/23 16:49:03 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
+/* draw_crosshair draws a vertical and a horizontal line
+in the middle of the window */
 void	draw_crosshair(t_data *data)
 {
 	int	center_x;

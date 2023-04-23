@@ -5,13 +5,15 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/22 16:20:26 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/22 17:32:52 by fluchten         ###   ########.fr       */
+/*   Created: 2023/04/23 17:01:28 by fluchten          #+#    #+#             */
+/*   Updated: 2023/04/23 17:05:34 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
+/* get_material calculates the position of the surface touched by a ray
+and determines which part of the texture should be used to draw this surface */
 static void	get_material(t_data *data, t_ray *ray, int start, int line_height)
 {
 	if (ray->side == 0)
@@ -29,6 +31,8 @@ static void	get_material(t_data *data, t_ray *ray, int start, int line_height)
 			+ line_height / 2) * ray->step;
 }
 
+/* draw_material draws a pixel of the texture at the specified
+x and y position on the screen */
 static void	draw_material(t_data *data, int x, int texture)
 {
 	int	color;
@@ -37,7 +41,8 @@ static void	draw_material(t_data *data, int x, int texture)
 	ft_mlx_pixel_put(&data->img, x, data->ray.start, color);
 }
 
-void	draw_map(t_data *data, t_ray *ray, int x)
+/* draw_column draws a column of pixels */
+void	draw_column(t_data *data, t_ray *ray, int x)
 {
 	int	line_height;
 

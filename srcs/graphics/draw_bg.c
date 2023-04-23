@@ -6,12 +6,14 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 16:42:13 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/22 16:42:24 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/23 16:48:10 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
+/* draw_background draws the top and bottom of the window with the
+ceiling and sky colors */
 void	draw_background(t_data *data)
 {
 	int	y;

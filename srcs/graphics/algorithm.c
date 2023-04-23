@@ -6,12 +6,14 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 12:13:29 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/22 17:12:23 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/23 16:59:24 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
+/* update_delta_dist calculates the length of the ray from
+one side x or y to the next side x or y */
 static void	update_delta_dist(t_ray *ray)
 {	
 	if (ray->ray_dir_x == 0)
@@ -24,6 +26,8 @@ static void	update_delta_dist(t_ray *ray)
 		ray->delta_dist_y = fabs(1 / ray->ray_dir_y);
 }
 
+/* update_steps calculates the step direction in x or y
+and the lateral distance */
 static void	update_steps(t_ray *ray)
 {
 	if (ray->ray_dir_x < 0)
@@ -48,6 +52,8 @@ static void	update_steps(t_ray *ray)
 	}
 }
 
+/* dda_algorithm implements the DDA (Digital Differential Analyzer) algorithm
+used to calculate intersections between a ray and walls */
 static void	dda_algorithm(t_data *data, t_ray *ray)
 {
 	int	hit;
@@ -72,6 +78,8 @@ static void	dda_algorithm(t_data *data, t_ray *ray)
 	}
 }
 
+/* update_player_infos updates all necessary information
+according to the player's position */
 void	update_player_infos(t_data *data, t_ray *ray, int x)
 {
 	ray->cam_x = 2 * x / (double) data->win_w - 1;

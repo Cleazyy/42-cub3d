@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 07:25:30 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/23 10:49:34 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/23 17:00:21 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,8 @@ void	update_player_infos(t_data *data, t_ray *ray, int x);
 void	draw_background(t_data *data);
 /* draw_crosshair */
 void	draw_crosshair(t_data *data);
-/* draw_map */
-void	draw_map(t_data *data, t_ray *ray, int x);
+/* draw_column */
+void	draw_column(t_data *data, t_ray *ray, int x);
 /* raycasting */
 void	initialize_ray_table(t_ray *ray);
 void	init_raycasting(t_data *data);

@@ -6,12 +6,14 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 15:59:31 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/22 17:13:02 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/23 17:15:00 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
+/* ft_mlx_pixel_put draws a pixel of specified color on the image
+at the x and y position */
 void	ft_mlx_pixel_put(t_img *img, int x, int y, int color)
 {
 	char	*dst;
@@ -20,11 +22,14 @@ void	ft_mlx_pixel_put(t_img *img, int x, int y, int color)
 	*(unsigned int *)dst = color;
 }
 
+/* get_line_height calculates the height of the line to be draw on the screen */
 int	get_line_height(t_data *data)
 {
 	return ((int)(data->win_h / data->ray.perpwalldist));
 }
 
+/* get_lowest_pixel calculates the lowest pixel to fill
+in the current band */
 int	get_lowest_pixel(t_data *data, int line_height)
 {
 	int	draw_start;
@@ -35,6 +40,8 @@ int	get_lowest_pixel(t_data *data, int line_height)
 	return (draw_start);
 }
 
+/* get_highest_pixel calculates the highest pixel to fill
+in the current band */
 int	get_highest_pixel(t_data *data, int line_height)
 {
 	int	draw_end;
@@ -45,6 +52,7 @@ int	get_highest_pixel(t_data *data, int line_height)
 	return (draw_end);
 }
 
+/* get_color returns the color value of a specific pixel in a texture */
 int	get_color(t_data *data, int x, int y, int i)
 {
 	return (*(int *)(data->mat[i].addr + (y * data->mat[i].line_length + x
