@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 10:42:17 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/22 20:47:12 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/23 10:21:56 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@ static void	initialize_game_table(t_data *data)
 {
 	data->game.mat_px = MAT_PX;
 	data->game.fov = FOV;
-	data->game.move_speed = MOVE_SPEED;
+	data->game.walk_speed = WALK_SPEED;
+	data->game.run_speed = RUN_SPEED;
 	data->game.rot_speed = ROT_SPEED;
 }
 
@@ -52,7 +53,7 @@ static void	initialize_key_table(t_data *data)
 	int	i;
 
 	i = 0;
-	while (i < 6)
+	while (i < 7)
 	{
 		data->key[i] = false;
 		i++;

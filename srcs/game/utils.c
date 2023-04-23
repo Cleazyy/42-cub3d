@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 08:06:08 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/22 20:14:33 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/23 10:24:47 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,13 @@
 
 void	key_loop(t_data *data)
 {
-	update_pos(data, &data->ray, data->map.array, data->game.move_speed);
+	double	speed;
+
+	if (data->key[SHIFT] == true)
+		speed = data->game.run_speed;
+	else
+		speed = data->game.walk_speed;
+	update_pos(data, &data->ray, data->map.array, speed);
 	update_angle(data, &data->map, &data->ray, data->game.rot_speed);
 }
 

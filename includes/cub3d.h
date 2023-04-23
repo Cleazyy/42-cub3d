@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 12:30:04 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/22 20:20:10 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/23 10:24:03 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,9 @@
 # define WIN_H 720
 # define MAT_PX 64
 # define FOV 0.66
-# define MOVE_SPEED 0.05
-# define ROT_SPEED 0.07
+# define WALK_SPEED 0.05
+# define RUN_SPEED 0.09
+# define ROT_SPEED 0.06
 
 # define KEY_W 13
 # define KEY_A 0
@@ -45,6 +46,7 @@
 # define KEY_ESC 53
 # define KEY_L 123
 # define KEY_R 124
+# define KEY_SHIFT 257
 
 typedef struct s_img
 {
@@ -75,7 +77,7 @@ typedef struct s_data
 	void		*win;
 	int			win_w;
 	int			win_h;
-	bool		key[6];
+	bool		key[7];
 	t_game		game;
 	t_map		map;
 	t_img		img;

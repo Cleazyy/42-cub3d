@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/19 16:11:19 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/22 17:25:34 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/23 10:17:05 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@ int	key_pressed(int key, t_data *data)
 		data->key[L] = true;
 	if (key == KEY_R)
 		data->key[R] = true;
+	if (key == KEY_SHIFT)
+		data->key[SHIFT] = true;
 	return (0);
 }
 
@@ -53,5 +55,7 @@ int	key_release(int key, t_data *data)
 		data->key[L] = false;
 	if (key == KEY_R)
 		data->key[R] = false;
+	if (key == KEY_SHIFT)
+		data->key[SHIFT] = false;
 	return (0);
 }
