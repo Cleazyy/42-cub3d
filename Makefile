@@ -6,7 +6,7 @@
 #    By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/10 12:24:21 by fluchten          #+#    #+#              #
-#    Updated: 2023/04/23 10:10:24 by fluchten         ###   ########.fr        #
+#    Updated: 2023/04/23 10:49:18 by fluchten         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,6 +28,7 @@ SRCS =	game/game.c \
 		game/utils.c \
 		graphics/algorithm.c \
 		graphics/draw_bg.c \
+		graphics/draw_crosshair.c \
 		graphics/draw_map.c \
 		graphics/raycasting.c \
 		graphics/utils.c \
