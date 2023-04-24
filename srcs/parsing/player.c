@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   player.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mgomes-d <mgomes-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 14:42:58 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/23 16:13:22 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/24 12:22:27 by mgomes-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ static char	get_player_spawn_pos(t_data *data)
 			if (is_character(data->map.array[y][x]))
 			{
 				dir = data->map.array[y][x];
-				data->ray.x = (double) x;
-				data->ray.y = (double) y;
+				data->ray.x = (double) x + 0.5;
+				data->ray.y = (double) y + 0.5;
 			}
 			x++;
 		}
