@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 12:30:04 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/23 10:24:03 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/24 11:32:20 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@
 # define FOV 0.66
 # define WALK_SPEED 0.05
 # define RUN_SPEED 0.09
-# define ROT_SPEED 0.06
+# define ROT_SPEED 0.05
 
 # define KEY_W 13
 # define KEY_A 0
@@ -83,6 +83,7 @@ typedef struct s_data
 	t_img		img;
 	t_img		mat[4];
 	t_ray		ray;
+	t_cross		cross;
 }	t_data;
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 07:25:30 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/23 17:16:24 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/24 11:26:09 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,12 +46,20 @@ typedef struct s_ray
 	double	tex_pos;
 }	t_ray;
 
+typedef struct s_cross
+{
+	int		size;
+	int		cx;
+	int		cy;
+	int		clr;
+}	t_cross;
+
 /* algorithm */
 void	update_player_infos(t_data *data, t_ray *ray, int x);
 /* draw_bg */
 void	draw_background(t_data *data);
 /* draw_crosshair */
-void	draw_crosshair(t_data *data);
+void	init_crosshair(t_data *data);
 /* draw_column */
 void	draw_column(t_data *data, t_ray *ray, int x);
 /* raycasting */
