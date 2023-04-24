@@ -6,7 +6,7 @@
 /*   By: mgomes-d <mgomes-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 07:25:30 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/24 12:20:53 by mgomes-d         ###   ########.fr       */
+/*   Updated: 2023/04/24 12:28:47 by mgomes-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ int		init_game(t_data *data);
 int		close_window(t_data *data);
 int		key_pressed(int key, t_data *data);
 int		key_release(int key, t_data *data);
+int		mouse_hook(int x, int y, t_data *data);
 /* moves */
 void	update_pos(t_data *data, t_ray *ray, char **map, double speed);
 /* rotate */
