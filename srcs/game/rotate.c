@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mgomes-d <mgomes-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 15:27:53 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/23 16:42:43 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/24 12:20:23 by mgomes-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,20 @@ void	update_angle(t_data *data, t_map *map, t_ray *ray, double speed)
 	if (data->key[L] == true && is_east_or_weast(map->dir))
 		rotate_angle(ray, speed);
 	if (data->key[R] == true && is_north_or_south(map->dir))
+		rotate_angle(ray, speed);
+}
+
+void	update_angle_mouse(t_data *data, int left, t_ray *ray, double speed)
+{
+	t_map	*map;
+
+	map = &data->map;
+	if (left == 1 && is_north_or_south(map->dir))
+		rotate_angle(ray, -speed);
+	if (left == 0 && is_east_or_weast(map->dir))
+		rotate_angle(ray, -speed);
+	if (left == 1 && is_east_or_weast(map->dir))
+		rotate_angle(ray, speed);
+	if (left == 0 && is_north_or_south(map->dir))
 		rotate_angle(ray, speed);
 }

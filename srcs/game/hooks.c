@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   hooks.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mgomes-d <mgomes-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/19 16:11:19 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/23 16:39:06 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/24 12:16:13 by mgomes-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,5 +60,26 @@ int	key_release(int key, t_data *data)
 		data->key[R] = false;
 	if (key == KEY_SHIFT)
 		data->key[SHIFT] = false;
+	return (0);
+}
+
+int	mouse_hook(int x, int y, t_data *data)
+{
+	double	pitch;
+	int		direction;
+
+	(void)y;
+	mlx_mouse_hide(data->win);
+	direction = 1;
+	if (x > data->win_w / 2)
+	{
+		pitch = (x - (data->win_w / 2)) * SENSITIVITY / FPS;
+		direction = 0;
+	}
+	if (x < data->win_w / 2)
+		pitch = ((data->win_w / 2) - x) * SENSITIVITY / FPS;
+	if (x != data->win_w / 2)
+		update_angle_mouse(data, direction, &data->ray, pitch);
+	mlx_mouse_move(data->win, data->win_w / 2, data->win_h / 2);
 	return (0);
 }
