@@ -6,15 +6,14 @@
 #    By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/10 12:24:21 by fluchten          #+#    #+#              #
-#    Updated: 2023/04/24 11:28:35 by fluchten         ###   ########.fr        #
+#    Updated: 2023/04/26 09:00:53 by fluchten         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = cub3D
 
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror -Os -O2 -O3 ${FSANITIZE}
-FSANITIZE = -fsanitize=address -g
+CFLAGS = -Wall -Wextra -Werror -Os -O2 -O3
 RM = rm -rf
 
 INC_DIR = includes
