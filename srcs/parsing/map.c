@@ -6,11 +6,29 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/09 21:35:57 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/23 16:04:04 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/04/27 07:31:23 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
+
+/* map_contains_all_infos checks if the map file contains all the information,
+so the 4 textures and the color of the floor and the ceiling */
+static int	map_contains_all_infos(t_data *data)
+{
+	int	i;
+
+	i = 0;
+	while (i < 4)
+	{
+		if (!data->mat[i].path)
+			return (1);
+		i++;
+	}
+	if (!data->map.floor_color || !data->map.ceiling_color)
+		return (1);
+	return (0);
+}
 
 /* allocate_info checks that there is no duplicate information and saves
 all the data by removing the line break and the spaces before and after */
