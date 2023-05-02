@@ -6,7 +6,7 @@
 #    By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/10 12:24:21 by fluchten          #+#    #+#              #
-#    Updated: 2023/04/27 07:31:38 by fluchten         ###   ########.fr        #
+#    Updated: 2023/05/02 18:30:12 by fluchten         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,11 +47,11 @@ SRCS =	game/game.c \
 
 OBJS = $(addprefix ${OBJS_DIR}/, ${SRCS:%.c=%.o})
 
-LIBFT_PATH = libft
+LIBFT_PATH = libs/libft
 LIBFT_LIB = ${LIBFT_PATH}/libft.a
 LIBFT_INC = ${LIBFT_PATH}/includes
 
-MLX_PATH = mlx
+MLX_PATH = libs/mlx
 MLX_LIB	= ${MLX_PATH}/libmlx.a ${MLX_FLAGS}
 MLX_INC = -I ${MLX_PATH}/
 MLX_FLAGS = -framework OpenGL -framework AppKit
