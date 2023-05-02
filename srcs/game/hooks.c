@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   hooks.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mgomes-d <mgomes-d@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/19 16:11:19 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/24 12:16:13 by mgomes-d         ###   ########.fr       */
+/*   Updated: 2023/05/02 18:17:15 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ int	mouse_hook(int x, int y, t_data *data)
 	int		direction;
 
 	(void)y;
-	mlx_mouse_hide(data->win);
+	mlx_mouse_hide();
 	direction = 1;
 	if (x > data->win_w / 2)
 	{
