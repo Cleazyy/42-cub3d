@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   game.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mgomes-d <mgomes-d@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 14:29:04 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/24 12:28:25 by mgomes-d         ###   ########.fr       */
+/*   Updated: 2023/05/02 18:22:06 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,9 +64,9 @@ static void	init_game_hooks(t_data *data)
 {
 	mlx_hook(data->win, 2, 0, key_pressed, data);
 	mlx_hook(data->win, 3, 0, key_release, data);
+	mlx_hook(data->win, 6, 0, mouse_rotate, data);
 	mlx_hook(data->win, 17, 0, close_window, data);
 	mlx_loop_hook(data->mlx, game_loop, data);
-	mlx_hook(data->win, 6, 0, mouse_hook, data);
 	mlx_loop(data->mlx);
 }
 

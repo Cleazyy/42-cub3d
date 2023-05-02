@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mgomes-d <mgomes-d@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 12:30:04 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/24 12:18:36 by mgomes-d         ###   ########.fr       */
+/*   Updated: 2023/05/02 18:21:49 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,6 @@
 # define WALK_SPEED 0.05
 # define RUN_SPEED 0.09
 # define ROT_SPEED 0.05
-# define FPS 60.0
-# define SENSITIVITY 0.08
 
 # define KEY_W 13
 # define KEY_A 0

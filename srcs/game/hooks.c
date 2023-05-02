@@ -6,7 +6,7 @@
 /*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/19 16:11:19 by fluchten          #+#    #+#             */
-/*   Updated: 2023/05/02 18:17:15 by fluchten         ###   ########.fr       */
+/*   Updated: 2023/05/02 18:26:48 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,23 +63,24 @@ int	key_release(int key, t_data *data)
 	return (0);
 }
 
-int	mouse_hook(int x, int y, t_data *data)
+/* mouse_rotate updates the player's camera plane */
+int	mouse_rotate(int x, int y, t_data *data)
 {
 	double	pitch;
 	int		direction;
 
-	(void)y;
+	(void) y;
 	mlx_mouse_hide();
 	direction = 1;
 	if (x > data->win_w / 2)
 	{
-		pitch = (x - (data->win_w / 2)) * SENSITIVITY / FPS;
+		pitch = (x - (data->win_w / 2)) * 0.08 / 60.0;
 		direction = 0;
 	}
 	if (x < data->win_w / 2)
-		pitch = ((data->win_w / 2) - x) * SENSITIVITY / FPS;
+		pitch = ((data->win_w / 2) - x) * 0.08 / 60.0;
 	if (x != data->win_w / 2)
-		update_angle_mouse(data, direction, &data->ray, pitch);
+		update_angle_mouse(data, &data->ray, direction, pitch);
 	mlx_mouse_move(data->win, data->win_w / 2, data->win_h / 2);
 	return (0);
 }

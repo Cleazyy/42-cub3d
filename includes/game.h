@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   game.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mgomes-d <mgomes-d@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fluchten <fluchten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 07:25:30 by fluchten          #+#    #+#             */
-/*   Updated: 2023/04/24 12:28:47 by mgomes-d         ###   ########.fr       */
+/*   Updated: 2023/05/02 18:26:39 by fluchten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,12 @@ int		init_game(t_data *data);
 int		close_window(t_data *data);
 int		key_pressed(int key, t_data *data);
 int		key_release(int key, t_data *data);
-int		mouse_hook(int x, int y, t_data *data);
+int		mouse_rotate(int x, int y, t_data *data);
 /* moves */
 void	update_pos(t_data *data, t_ray *ray, char **map, double speed);
 /* rotate */
 void	update_angle(t_data *data, t_map *map, t_ray *ray, double speed);
-void	update_angle_mouse(t_data *data, int left, t_ray *ray, double speed);
+void	update_angle_mouse(t_data *data, t_ray *ray, int left, double speed);
 /* utils */
 void	key_loop(t_data *data);
 int		is_character(char c);
