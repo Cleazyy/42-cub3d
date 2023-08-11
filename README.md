@@ -6,6 +6,6 @@ A simple 3D game that initializes raycasting in C with MiniLibX made for 42.
 - Use the make command to compile the files.
 
 ### Usage:
-```./so_long maps/mapfile.cub```
+```./cub3D maps/mapfile.cub```
 
-![screenshot01](https://zupimages.net/up/23/18/2y3v.png)
+![screenshot01](https://i.imgur.com/DBGSWhg.png)
