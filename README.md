@@ -8,4 +8,4 @@ A simple 3D game that initializes raycasting in C with MiniLibX made for 42.
 ### Usage:
 ```./cub3D maps/mapfile.cub```
 
-![screenshot01](https://i.imgur.com/DBGSWhg.png)
+![screenshot01](https://i.imgur.com/B5E60u4.png)
